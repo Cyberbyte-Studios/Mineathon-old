@@ -1,0 +1,106 @@
+/* +++ Desktop/Tablet Styles +++ */
+
+.navbar {
+	margin-bottom: 0px;
+	height:90px;
+	background-color: #63B8FF;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-nav.navbar-left.move-left-desktop:first-child {
+	margin-left:410px;
+}
+
+.navbar-nav.navbar-right.move-right-desktop:last-child {
+	margin-right:380px;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: white;
+    font-size: 25px;
+    font-weight: bold;	
+}
+
+.navbar-nav > li > a:hover {
+	color: #E8E8E8;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left:0;
+    top: -16px;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar-inverse {
+	padding-bottom: 70px;
+	padding-top: 70px;
+}
+
+#navbar-collapse-1 ul {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.navbar-nav.navbar-left.move-left-tablet:first-child {
+	margin-left:110px; /* Needs 30px more than right */
+}
+
+.navbar-nav.navbar-right.move-right-tablet:last-child {
+	margin-right:80px;
+}
+
+/* +++ Mobile Stlyes +++ */
+
+.navbar-mob {
+	margin-bottom: 0px;
+	background-color: #63B8FF;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-brand-mobile {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 25px;
+    text-align: center;
+    margin: auto;
+}
+
+.navbar-toggle {
+   margin-top: 15px;
+   margin-bottom: 10px;
+}
+
+.navbar-brand .hidden-lg a {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;	
+}
+
+#navbar-collapse-2 ul {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+#navbar-collapse-2 .navbar-nav > li > a {
+	color: black;
+    font-size: 25px;
+    font-weight: bold;	
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+}
+
+.navbar-inverse .navbar-toggle {
+	border-color: transparent;
+}
+
+.progress-bar-theme {
+  background-color: #1abc9c;
+}
