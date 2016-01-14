@@ -45,8 +45,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/video/save', 'Core\VideoController@newVideo');
     Route::get('/video/{id}', 'Core\VideoController@video');
    
-    Route::get('/dashboard', function () {
-        return view('admin.dash');
-    });   
+    Route::get('/dashboard', 'Admin\DashController@dashboard');
     
 });
