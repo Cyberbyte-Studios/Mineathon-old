@@ -254,3 +254,76 @@ bt {
 .myBlock {
 	display:inline-block;
 }
+
+.adminTable .panel-title {
+	height: 35px;
+}
+
+@media (max-width: 750px) {
+    .welcomeFix {
+        padding-top: 70px
+    }
+    
+    .adminTable button {
+	    padding: 1px 5px;
+	    font-size: 12px;
+	    line-height: 1.5;
+	    border-radius: 3px;
+    }
+    
+    .adminTable .panel-title {
+		height: inherit;
+	}
+	
+}
+
+@media (max-width: 560px) {
+	.adminTable .noWrap {
+		width: 100%;
+	    margin-bottom: 15px;
+	    overflow-x: scroll;
+	    overflow-y: hidden;
+	    border: 1px solid #dddddd;
+	}
+}
+
+#admin {
+	margin: 5px;
+}
+
+.graphs {
+	width:33%;
+	display:inline-block;
+}
+
+.adminTable .btn {
+	margin: 2px;	
+}
+
+.adminTable thead th {
+	text-align: center;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}

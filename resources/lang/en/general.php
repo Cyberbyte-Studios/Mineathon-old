@@ -48,4 +48,15 @@ return [
         'contactEMAD' => 'Contact E-Mail Address',
         'contactInfo' => 'Used incase of any issues',        
     ],
+    
+    'admin' => [
+        'admin' => 'Admin',
+        'new' => 'New',
+        'name' => 'Name',
+        'url' => 'URL',
+        'image' => 'Picture',
+        'actions' => 'Actions',
+        'guests' => 'Guests',
+        'sponsors' => 'Sponsors',    
+    ],
 ];
