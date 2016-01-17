@@ -15,17 +15,34 @@
                 	</div>
                 	<div class="panel-body centered">
                 	    @if (Helper::settings('guests'))
-                            <button id="disableGuests" type="button" class="btn btn-danger btn-semi-block">{{ trans('general.admin.disableGuests') }}</button>
+                            <a href="{{ url('toggleGuests') }}" class="btn btn-danger btn-semi-block">{{ trans('general.admin.disableGuests') }}</a>
                         @else
-                            <button id="enableGuests" type="button" class="btn btn-success btn-semi-block">{{ trans('general.admin.enableGuests') }}</button>
+                            <a href="{{ url('toggleGuests') }}" class="btn btn-success btn-semi-block">{{ trans('general.admin.enableGuests') }}</a>
                         @endif
                         @if (Helper::settings('sponsors'))
-                            <button id="disableSponsors" type="button" class="btn btn-danger btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.disableSponsors') }}</button>
+                            <a href="{{ url('toggleSponsors') }}" class="btn btn-danger btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.disableSponsors') }}</a>
                         @else
-                            <button id="enableSponsors" type="button" class="btn btn-success btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.enableSponsors') }}</button>
+                            <a href="{{ url('toggleSponsors') }}" class="btn btn-success btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.enableSponsors') }}</a>
                         @endif
                 	</div>
-                </div>                
+                </div>
+                <div class="panel panel-default graphs">
+                	<div class="panel-heading">
+                		<h3 class="panel-title"><i class="fa fa-long-arrow-right fa-video-camera"></i> {{ trans('general.admin.pendingTitle') }}</h3>
+                	</div>
+                	<div class="panel-body centered">
+                	    @if (Helper::settings('guests'))
+                            <a href="{{ url('toggleGuests') }}" class="btn btn-danger btn-semi-block">{{ trans('general.admin.disableGuests') }}</a>
+                        @else
+                            <a href="{{ url('toggleGuests') }}" class="btn btn-success btn-semi-block">{{ trans('general.admin.enableGuests') }}</a>
+                        @endif
+                        @if (Helper::settings('sponsors'))
+                            <a href="{{ url('toggleSponsors') }}" class="btn btn-danger btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.disableSponsors') }}</a>
+                        @else
+                            <a href="{{ url('toggleSponsors') }}" class="btn btn-success btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.enableSponsors') }}</a>
+                        @endif
+                	</div>
+                </div>                 
                 {{-- Guests Table --}}
             	@include('admin.guests')
             	

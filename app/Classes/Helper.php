@@ -55,4 +55,11 @@ class Helper {
         return $settings[$setting];
     }
     
+    public function updateSettings($setting, $value) {
+        $thisSetting = Setting::where('key', $setting)->first();
+        Cache::flush('settings');
+        $thisSetting->value = $value;
+        $thisSetting->save();
+    }
+    
 }

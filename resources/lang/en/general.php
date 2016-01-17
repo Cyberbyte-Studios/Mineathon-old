@@ -28,15 +28,13 @@ return [
     ],
     
     'footer' => [
-        'colum1Name' => 'Colum Name',
-        'colum1Text' => 'Some Text',
+        'colum1Name' => 'Contact',
+        'colum1Text' => '<span>Webmaster: web@mineathon.com </span><br/><span>Contact: contact@mineathon.com </span>',
         
         'colum2Name' => 'Social Media',
         'colum2Text' => '<a href="https://twitter.com/mineathon_event">Twitter</a><br/>',
         
-        'colum3Name' => 'Colum Name',
-        'colum3Text' => 'Some Text',
-        
+        'colum3Name' => 'Feed',
     ],
     
     'videoNew' => [
@@ -69,6 +67,7 @@ return [
         'sponsors' => 'Sponsors',
         'close' => 'Close',
         'save' => 'Save',
+        'pendingTitle' => 'Pending Videos',
         'edit' => [
             'guest' => 'Edit Guest',
         ],        

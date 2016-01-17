@@ -23,18 +23,20 @@ class DashController extends Controller {
     
     public function toggleGuests() {
         if (Helper::settings('guests')) {
-            //set it to false
+            Helper::updateSettings('guests','0');
         } else {
-            //set it to true
+            Helper::updateSettings('guests','1');
         }
+        return redirect('dashboard');
     }
     
     public function toggleSponsors() {
         if (Helper::settings('sponsors')) {
-            //set it to false            
+            Helper::updateSettings('sponsors','0');
         } else {
-            //set it to true
+            Helper::updateSettings('sponsors','1');
         }        
+        return redirect('dashboard');
     }
     
     public function updateGuest(Request $request) {
