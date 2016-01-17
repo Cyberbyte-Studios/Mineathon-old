@@ -58,22 +58,6 @@
 </script>
 
 <script>
-$('#disableGuests').click(function() {
-    
-});
-
-$('#enableGuests').click(function() {
-    
-});
-
-$('#disableSponsors').click(function() {
-    
-});
-
-$('#enableSponsors').click(function() {
-    
-});
-
 $('#guests .btn-primary').click(function () {
     console.log($(this));
     $rows = $(this).closest("tr").find("td");

@@ -278,17 +278,18 @@ textarea {
 }
 
 .navbar {
-  height: 68px;
+  height: 90px;
   background-color: $brand-primary;
 }
 
 .navbar-brand .small {
-  padding-top: 5px;
+  padding-top: 35px;
 }
 
 .navbar-brand {
   transform: translateX(-50%);
   left: 50%;
+  top: -18px;
   position: absolute;
 }
 
@@ -300,4 +301,8 @@ textarea {
 .navbar-default .navbar-nav > li > a {
   font-size: 25px;
   color: white;
+}
+
+.navbar-nav {
+  margin-top: 12px;
 }

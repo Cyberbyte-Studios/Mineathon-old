@@ -38,9 +38,17 @@
                         @endforeach
                     </div>
                     <div class="panel-footer">
-                        <button type="button" class="btn btn-primary btn-lg btn-semi-block vote"
-                                data-charity="{{ $charity->id }}" data-votes="{{ $charity->votes }}">Vote For This
-                            Charity
+                        <button type="button" class="btn btn-primary btn-lg btn-semi-block vote
+                        	@if($voted)
+                        	disabled
+                        	@endif
+                        	"
+                                data-charity="{{ $charity->id }}" data-votes="{{ $charity->votes }}">
+                        	@if($voted)
+                        	{{ trans('general.vote.wait') }}
+                        	@else
+                        	{{ trans('general.vote.vote') }}
+                        	@endif
                         </button>
                         <h3 class="col-counter" style="float:right;"> {{ $charity->votes }} </h3>
                     </div>
@@ -62,13 +70,14 @@
             var score = self.data('votes');
             var parent = self.parent();
 
-		    parent.find('.col-counter').html(++score).css({'color':'green'});
-            self.addClass('btn-success');
-            $('.vote').addClass('disabled');
-            self.removeClass('btn-primary');
-
-            $.post("/vote", {'charity': charity, '_token': '{{ csrf_token() }}'}, function (data) {
-            });
+            if(!self.hasClass('disabled')) {
+    		    parent.find('.col-counter').html(++score).css({'color':'green'});
+                self.addClass('btn-success');
+                $('.vote').addClass('disabled');
+                self.removeClass('btn-primary');
+    
+                $.post("/vote", {'charity': charity, '_token': '{{ csrf_token() }}'}, function (data) {});            
+            }
         });
     });
 </script>

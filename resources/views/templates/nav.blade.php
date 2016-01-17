@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <a href="{{ url('/') }}">
-	      <div class="navbar-brand navbar-brand-centered"><img class="large" src="{{ secure_asset('assets/img/nav/nav-top-60.png') }}"></div>
+	      <div class="navbar-brand navbar-brand-centered nav-large"><img class="large" src="{{ secure_asset('assets/img/nav/nav-top-60.png') }}"></div>
 	      <div class="navbar-brand navbar-brand-centered"><img class="small" src="{{ secure_asset('assets/img/nav/mobile-nav.png') }}"></div>
       </a>
     </div>

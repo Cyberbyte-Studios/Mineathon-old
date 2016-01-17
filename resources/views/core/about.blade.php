@@ -32,9 +32,9 @@
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 centered">
 			<h3>Endorsements, Acknowledgements and Media Links</h3>
-			<br><a href="https://drive.google.com/file/d/0B3f__ySeVcfdRmQ4dVNWN3lXbDQ/view?usp=sharing"></a>
-			<br><a href="https://drive.google.com/file/d/0B3f__ySeVcfddXhJaGZLSVhTVjA/view?usp=sharing">Child's Play Acknowledgement.</a>
-			<br><a href="https://drive.google.com/file/d/0B3f__ySeVcfdNFc1WG1wUzVYTkE/view?usp=sharing">Cayuga and District Chamber of Commerce Endorsement.</a>
+			<br><h4><a href="https://drive.google.com/file/d/0B3f__ySeVcfdRmQ4dVNWN3lXbDQ/view?usp=sharing">....</a></h4>
+			<br><h4><a href="https://drive.google.com/file/d/0B3f__ySeVcfddXhJaGZLSVhTVjA/view?usp=sharing">Child's Play Acknowledgement.</a></h4>
+			<br><h4><a href="https://drive.google.com/file/d/0B3f__ySeVcfdNFc1WG1wUzVYTkE/view?usp=sharing">Cayuga and District Chamber of Commerce Endorsement.</a></h4>
 		</div>
 	</div>
 </div>

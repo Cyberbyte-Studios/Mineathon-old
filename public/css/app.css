@@ -8033,7 +8033,7 @@ textarea {
   display: block; }
 
 .navbar {
-  height: 68px;
+  height: 90px;
   background-color: #63B8FF; }
 
 .navbar-brand .small {
@@ -8043,6 +8043,7 @@ textarea {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   left: 50%;
+  top: -18px;
   position: absolute; }
 
 .navbar-default .navbar-collapse {
@@ -8052,5 +8053,8 @@ textarea {
 .navbar-default .navbar-nav > li > a {
   font-size: 25px;
   color: white; }
+
+.navbar-nav {
+  margin-top: 12px; }
 
 /*# sourceMappingURL=app.css.map */
