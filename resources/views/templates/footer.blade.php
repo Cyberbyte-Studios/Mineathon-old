@@ -29,13 +29,6 @@
 				<p>Message: <strong id="lastDonMessage"></strong></p>					
 			</div>
 		</div>
-		@if (Auth::check())
-		@if (Auth::user()->level)
-		Page Time: {{ (microtime(true) - LARAVEL_START) }}
-		<?php $load = sys_getloadavg() ?>
-		Load: {{ $load[0].' '.$load[1].' '.$load[2] }}
-		Server: {{ $_SERVER['SERVER_ADDR']}}
-		@endif
-		@endif
+		{{ Helper::debug() }}
 	</div>
 </div>

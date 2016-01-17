@@ -44,8 +44,6 @@
 @include('templates.sponsors')
 @endsection
 
-
-
 @push('scripts')
 <script>
     $(document).ready(function(){

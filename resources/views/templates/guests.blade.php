@@ -1,6 +1,6 @@
-{{-- Needs 64x64 Minecraft head. Needs link to YT/Twitter/whatever (only one) --}}
+@if (Helper::settings('guests'))
 <div class="container padding">
-	<h1 class="text-center">Our Guests (To be announced)</h1>
+	<h1 class="text-center">{{ trans('general.guests') }}</h1>
 	<div class="row mt centered">
         <div class="col-sm-3">
 			<h3>.....</h3>
@@ -20,3 +20,4 @@
 		</div>
 	</div>
 </div>
+@endif

@@ -1,22 +1,13 @@
-{{-- Needs Sponsor Logo. Needs link to website/affiliate link --}}
+@if (Helper::settings('sponsors'))
 <div class="container padding">
-	<h1 class="text-center">Our Sponsors (To be announced)</h1>
+	{{ trans('general.sponsors') }}
 	<div class="row mt centered">
+		@foreach (Helper::sponsors() as $sponsor)
         <div class="col-sm-3">
-			<h3>.....</h3>
-			<img class="img-responsive center-block" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Soon&w=200&h=200" alt="" />
+			<h3>{{ $sponsor['name'] }}</h3>
+			<img class="img-responsive center-block" src="{{ $sponsor['image'] }}" alt="{{ $sponsor['name'] }}" />
 		</div>
-		<div class="col-sm-3">
-			<h3>.....</h3>
-			<img class="img-responsive center-block" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Soon&w=200&h=200" alt="" />
-		</div>
-		<div class="col-sm-3">
-			<h3>.....</h3>
-			<img class="img-responsive center-block" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Soon&w=200&h=200" alt="" />
-		</div>
-		<div class="col-sm-3">
-			<h3>.....</h3>
-			<img class="img-responsive center-block" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Soon&w=200&h=200" alt="" />
-		</div>
+		@endforeach
 	</div>
 </div>
+@endif

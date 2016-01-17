@@ -59,4 +59,8 @@ return [
         'guests' => 'Guests',
         'sponsors' => 'Sponsors',    
     ],
+    
+    'donate' => [
+        'donateTo' => 'Donate to Mineathon',
+    ],
 ];
