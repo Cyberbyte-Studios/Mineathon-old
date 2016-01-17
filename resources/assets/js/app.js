@@ -19,7 +19,6 @@ sse.addEventListener('donation.add', function(e) {
     bootstrap_alert.warning = function(title, ammount, msg) {
     	$('#lastDonNick').html(title);
     	$('#lastDonAmmount').html('£'+ammount);
-    	$('#lastDonMessage').html(msg);
     }
     var donation = data.amount.display.total;
     var msg = data.message;

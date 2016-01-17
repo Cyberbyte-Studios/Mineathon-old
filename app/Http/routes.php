@@ -49,5 +49,8 @@ Route::group(['middleware' => 'web'], function () {
     
     Route::get('/dashboard', 'Admin\DashController@dashboard');
     
+    Route::get('/toggleGuests', 'Admin\DashController@toggleGuests');
+    Route::get('/toggleSponsors', 'Admin\DashController@toggleSponsors');
+    
 });
 

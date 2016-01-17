@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Core;
 
 use Cache;
+use DB;
 use App\Video;
 use App\Charity;
 use Illuminate\Http\Request;
@@ -14,15 +15,16 @@ class VideoController extends Controller {
             'email' => 'required|email|max:64',
             'charity' => 'required|integer|exists:charities,id',
             'youtube' => 'required|alpha_dash|max:32',
+            'g-recaptcha-response' => 'required|recaptcha',
         ]);
         
-        $id = DB::table('users')->insertGetId([
+        $id = DB::table('videos')->insertGetId([
             'charity_id' => $request->charity, 
             'youtube' => $request->youtube,
             'user' => $request->email
         ]);
         
-        $video = Cache::rememberForever('video_'.$id, function() {
+        $video = Cache::rememberForever('video_'.$id, function() use ($id) {
             return Video::with('charity')->findOrFail($id);
         });
         

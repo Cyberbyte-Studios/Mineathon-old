@@ -158,6 +158,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,        
     ],
 
     /*
@@ -205,6 +206,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Helper'    => App\Facades\Helper::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,        
     ],
 
 ];
