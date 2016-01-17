@@ -1,8 +1,6 @@
 <div class="panel panel-default adminTable" id="guests">
     <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-users fa-fw"></i> {{ trans('general.admin.guests') }}
-        <button type="button" class="btn btn-success pull-right"><i class="fa fa fa-file-o fa-fw"></i> {{ trans('general.admin.new') }} </button>
-        </h3>
+        <h4><i class="fa fa-users fa-fw"></i> {{ trans('general.admin.guests') }} </h4>
     </div>
     <div class="panel-body">
         <div class="noWrap">
@@ -24,7 +22,6 @@
                         <td>
                             <div class="row">
                                 <button type="button" class="btn btn-primary"><i class="fa fa-pencil fa-fw"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fa fa-close fa-fw"></i></button>
                             </div>
                         </td>
                     </tr>

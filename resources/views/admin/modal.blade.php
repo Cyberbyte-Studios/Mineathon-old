@@ -9,19 +9,19 @@
       <div class="modal-body">
         <form enctype="multipart/form-data">
           <div class="form-group">
-            <label for="name">{{ trans('admin.name') }}</label>
+            <label for="name">{{ trans('general.admin.name') }}</label>
             <input type="text" class="form-control" id="name" placeholder="{{ trans('admin.name') }}">
           </div>
           
           <div class="form-group">
-            <label for="url">{{ trans('admin.url') }}</label>
+            <label for="url">{{ trans('general.admin.url') }}</label>
             <input type="text" class="form-control" id="url" placeholder="{{ trans('admin.url') }}">
           </div>
           
           <div class="form-group">
             <div class="row">
               <div class="col-sm-10">
-                <label for="logo">{{ trans('admin.image') }}: </label>
+                <label for="logo">{{ trans('general.admin.image') }}: </label>
                 <div class="input-group">
                   <span class="input-group-btn">
                     <span class="btn btn-default btn-file">
@@ -40,8 +40,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('admin.close') }}</button>
-        <button type="button" class="btn btn-primary">{{ trans('admin.save') }}</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('general.admin.close') }}</button>
+        <button type="button" class="btn btn-primary">{{ trans('general.admin.save') }}</button>
       </div>
     </div>
   </div>

@@ -2,22 +2,12 @@
 <div class="container padding">
 	<h1 class="text-center">{{ trans('general.guests') }}</h1>
 	<div class="row mt centered">
+		@foreach (Helper::guests() as $guest)
         <div class="col-sm-3">
-			<h3>.....</h3>
-			<img class="img-responsive center-block" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Soon&w=200&h=200" alt="" />
+			<h3>{{ $guest->name }}</h3>
+			<img class="img-responsive center-block" src="{{ $guest->image }}" alt="{{ $guest->name }}" />
 		</div>
-		<div class="col-sm-3">
-			<h3>.....</h3>
-			<img class="img-responsive center-block" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Soon&w=200&h=200" alt="" />
-		</div>
-		<div class="col-sm-3">
-			<h3>.....</h3>
-			<img class="img-responsive center-block" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Soon&w=200&h=200" alt="" />
-		</div>
-		<div class="col-sm-3">
-			<h3>.....</h3>
-			<img class="img-responsive center-block" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Soon&w=200&h=200" alt="" />
-		</div>
+		@endforeach
 	</div>
 </div>
 @endif

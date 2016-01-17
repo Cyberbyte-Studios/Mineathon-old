@@ -6,10 +6,10 @@ Error: File to import not found or unreadable: node_modules/bootstrap-sass/asset
 2: $brand-primary: #63B8FF;
 3: @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 4: @import "node_modules/font-awesome/scss/font-awesome.scss";
-5: 
-6: @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-7: 
-8: body {
+5: @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+6: 
+7: body {
+8:   	background-color: #f2f2f2;
 
 Backtrace:
 /home/ubuntu/workspace/resources/assets/sass/app.scss:3
@@ -57,4 +57,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: node_modules/bootstrap-sass/assets/stylesheets/bootstrap.\A         on line 3 of /home/ubuntu/workspace/resources/assets/sass/app.scss\A \A 1: $font-family-sans-serif: 'Lato', sans-serif;\A 2: $brand-primary: #63B8FF;\A 3: @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\A 4: @import \"node_modules/font-awesome/scss/font-awesome.scss\";\A 5: \A 6: @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);\A 7: \A 8: body {"; }
+  content: "Error: File to import not found or unreadable: node_modules/bootstrap-sass/assets/stylesheets/bootstrap.\A         on line 3 of /home/ubuntu/workspace/resources/assets/sass/app.scss\A \A 1: $font-family-sans-serif: 'Lato', sans-serif;\A 2: $brand-primary: #63B8FF;\A 3: @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\A 4: @import \"node_modules/font-awesome/scss/font-awesome.scss\";\A 5: @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);\A 6: \A 7: body {\A 8:   	background-color: #f2f2f2;"; }

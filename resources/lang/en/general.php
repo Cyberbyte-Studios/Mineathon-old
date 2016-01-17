@@ -3,6 +3,8 @@
 return [
     'submit' => 'Submit',
     'login' => 'Login',  
+    'guests' => 'Guests', 
+    'sponsors' => 'Sponsors', 
     
     'nav' => [
         'about' => 'About',
@@ -50,6 +52,13 @@ return [
     ],
     
     'admin' => [
+        'title' => 'Mineathon Admin Dashboard',
+        'loggedInA' => 'Logged in as',
+        'settings' => 'Settings',
+        'enableGuests' => 'Enable Guests Section',
+        'enableSponsors' => 'Enable Sponsors Section',
+        'disableGuests' => 'Disable Guests Section',
+        'disableSponsors' => 'Disable Sponsors Section',        
         'admin' => 'Admin',
         'new' => 'New',
         'name' => 'Name',
@@ -57,7 +66,12 @@ return [
         'image' => 'Picture',
         'actions' => 'Actions',
         'guests' => 'Guests',
-        'sponsors' => 'Sponsors',    
+        'sponsors' => 'Sponsors',
+        'close' => 'Close',
+        'save' => 'Save',
+        'edit' => [
+            'guest' => 'Edit Guest',
+        ],        
     ],
     
     'donate' => [

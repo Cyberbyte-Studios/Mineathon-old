@@ -46,6 +46,6 @@ class VideoController extends Controller {
             return Charity::get();
         });
         
-        return view('core.addvideo', ['charities' => $charities]);
+        return view('core.addVideo', ['charities' => $charities]);
     }
 }

@@ -28,7 +28,7 @@
 				<p>Ammount: <strong id="lastDonAmmount"></strong></p>
 				<p>Message: <strong id="lastDonMessage"></strong></p>					
 			</div>
+			{{ Helper::debug() }}			
 		</div>
-		{{ Helper::debug() }}
 	</div>
 </div>

@@ -30,7 +30,7 @@
 				@endforeach
 			</div>
 			<div class="panel-footer">
-				<button type="button" class="btn btn-primary btn-lg btn-semi-block">Vote For This Charity</button>
+				<button type="button" class="btn btn-primary btn-lg btn-semi-block vote" data-charity="{{ $charity->id }}" data-votes="{{ $charity->votes }}">Vote For This Charity</button>
 				<h3 class="col-counter" style="float:right;"> {{ $charity->votes }} </h3>
 			</div>
 		</div>
@@ -49,14 +49,15 @@
     $(document).ready(function(){
     	$('.vote').click(function(){
     		var self = $(this);
-    		var parent = self.parent().parent();
-    		var vidid = parent.data('vidid');
-    		var score = parent.data('votes');
+    		var charity = self.data('charity');
+    		var score = self.data('votes');
+			var parent = self.parent();
 
-		    self.find('#votes').html(++score).css({'color':'green'});
-		    self.css({'color':'green'});
-		    $.post("/vote",  {'postid' : postid}, function (data) {});
-            parent.addClass('.disabled');
+		    parent.find('.col-counter').html(++score).css({'color':'green'});
+            self.addClass('btn-success disabled');
+            self.removeClass('btn-primary');
+            
+		    $.post("/vote",  {'charity' : charity}, function (data) {});
 		});
 	});
 </script>

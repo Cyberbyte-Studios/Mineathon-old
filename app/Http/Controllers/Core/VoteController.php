@@ -19,8 +19,15 @@ class VoteController extends Controller {
         return view('core.vote', ['charities' => $charities]);
     }
     
-    public function vote() {
-        Video::increment('votes');
+    public function vote(Request $request) {
+        $this->validate($request, [
+            'charity' => 'required',
+        ]);        
+
+        $video = Video::where('id', $request->charity);
+        $video->increment('votes');
+        $video->save();
+        
         return ['success' => true];
     }
 }

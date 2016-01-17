@@ -4,33 +4,53 @@ namespace App\Classes;
 use DB;
 use Auth;
 use Cache;
+use App\Setting;
 
 class Helper {
-    protected $cacheTime = 7500;
-    
+
     public function debug() {
         if (Auth::check()) {
 		    if (Auth::user()->level >= 3) {
 		        $load = sys_getloadavg();
-		        echo 'Page Time: '.microtime(true) - LARAVEL_START;
-		        echo ' Load: '.$load[0].' '.$load[1].' '.$load[2];
-		        echo ' Server: '.$_SERVER['SERVER_ADDR'];
+		        echo ' Page Time: '. microtime(true) - LARAVEL_START;
+		        echo ' Load: ' . $load[0].' '.$load[1].' '.$load[2];
+		        echo ' Server: '. $_SERVER['SERVER_ADDR'];
     		}
 		}
     }
     
-    // public function settings($setting, $default = null) {
-    //     $settings = Cache::remember('settings_' . Helper::currentCommunity(), $this->cacheTime,
-    //     function() {
-    //         return Community::find(Helper::currentCommunity());
-    //     });
-
-    //     //$settings = $globalSettings + $settings;
-    //     if (isset($settings[$setting])) {
-    //         return $settings[$setting];
-    //     } else {
-    //         return $default;
-    //     }
-    // }
+    public function upload($logo, $name) {
+        if ($logo->isValid()) {
+            $filename = slug($name).'-'.str_random(5).'.'.$logo->getClientOriginalExtension();
+            $logo->move(public_path().'/public/uploads/images/', $filename);
+            $img = Image::make(public_path().'/public/uploads/images/'.$filename);
+            $img->fit(200, 200)->save(public_path().'/public/uploads/images/200/'.$filename);
+            return $filename;
+        }
+    }
+    
+    public function sponsors() {
+        return Cache::rememberForever('sponsors', function() {
+            Sponsor::all();
+        });
+    }
+    
+    public function guests() {
+        return Cache::rememberForever('guests', function() {
+            Guest::all();
+        });
+    }
+    
+    public function settings($setting) {
+        $settings = Cache::rememberForever('settings', function() {
+            $allSettings = Setting::all();
+            
+            for ($i = 0; $i <= (count($allSettings) - 1); $i++) 
+            $settings[$allSettings[$i]->key] = $allSettings[$i]->value;
+            return $settings;
+        });
+        
+        return $settings[$setting];
+    }
     
 }

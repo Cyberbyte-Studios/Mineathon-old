@@ -48,7 +48,7 @@
     
 	function fetchTop(){
 		$(".myTab tbody").empty(); // this will remove all <tr>.
-		$.get("https://imraising.tv/api/v1/topDonors?apikey=JlTRn6Z2vArDq_-19cdvfg", function(data) {
+		$.get("https://imraising.tv/api/v1/topDonors?apikey=bfncDsxXbt8WB0wiRvwXVw", function(data) {
 			$.each(data, function(i, donor) {
 				$(".myTab").append(
 				    "<tr><td class='centered'>" + donor.nickname + "</td>" +
@@ -67,7 +67,7 @@
         },300000);  // this will call your fetchRaised function for every 5 Min.
     });
 	function fetchRaised(){
-		$.get("https://imraising.tv/api/v1/donations/total?apikey=JlTRn6Z2vArDq_-19cdvfg", function(data) {
+		$.get("https://imraising.tv/api/v1/donations/total?apikey=bfncDsxXbt8WB0wiRvwXVw", function(data) {
 			$('#raised').html('£'+data[0].total);
 			var raised = data[0].total/10000 * 100;
 			$('.raisedStats').html('<div class="progress"><div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="'+raised+'" aria-valuemin="0" aria-valuemax="100" style="width: '+raised+'%;">£'+data[0].total+'</div></div>');				

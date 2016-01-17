@@ -44,7 +44,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/video/new', 'Core\VideoController@addVideo');
     Route::post('/video/save', 'Core\VideoController@newVideo');
     Route::get('/video/{id}', 'Core\VideoController@video');
-   
+    
+    Route::post('/vote', 'Core\VoteController@vote');
+    
     Route::get('/dashboard', 'Admin\DashController@dashboard');
     
 });
+

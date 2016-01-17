@@ -5,40 +5,32 @@
     <div class="row welcomeFix margin">
         <div class="panel panel-primary" id="admin">
             <div class="panel-heading">
-                <h4 class="fixVid myBlock">Mineathon Admin Dashboard</h4>
-                <h4 class="fixVid myBlock" style="float:right; margin-right:10px;">Logged in as: {{ Auth::user()->name }}<a style="color:white; margin-left:25px;" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></h4>                
+                <h4 class="fixVid myBlock">{{ trans('general.admin.title') }}</h4>
+                <h4 class="fixVid myBlock" style="float:right; margin-right:10px;">{{ trans('general.admin.loggedInA') }}: {{ Auth::user()->name }}<a style="color:white; margin-left:25px;" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></h4>                
             </div>
             <div class="panel-body">
                 <div class="panel panel-default graphs">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Website Load</h3>
-                    </div>
-                    <div class="panel-body">
-                	    <p class="centered"><canvas id="serverLoad" height="120" width="120" style="width: 120px; height: 120px;"></canvas></p>
-                    	<p class="centered"><i class="fa fa-database"></i> Database 70% <br><i class="fa fa-gear"></i> NGIX: 70%</p>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Minecraft Server Load</h3>
-                    </div>
-                    <div class="panel-body">
-                	    <p class="centered"><canvas id="mcSrvLoad" height="120" width="120" style="width: 120px; height: 120px;"></canvas></p>
-                    	<p class="centered"><i class="fa fa-database"></i> Database 70% <br><i class="fa fa-gear"></i> NGIX: 70%</p>
-                    </div>
-                </div> 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Server Load</h3>
-                    </div>
-                    <div class="panel-body">
-                	    <p class="centered"><canvas id="serverLoad" height="120" width="120" style="width: 120px; height: 120px;"></canvas></p>
-                    	<p class="centered"><i class="fa fa-database"></i> 70%</p>
-                    </div>
-                </div>
-                
+                	<div class="panel-heading">
+                		<h3 class="panel-title"><i class="fa fa-long-arrow-right fa-cogs"></i> {{ trans('general.admin.settings') }}</h3>
+                	</div>
+                	<div class="panel-body centered">
+                	    @if (Helper::settings('guests'))
+                            <button id="disableGuests" type="button" class="btn btn-danger btn-semi-block">{{ trans('general.admin.disableGuests') }}</button>
+                        @else
+                            <button id="enableGuests" type="button" class="btn btn-success btn-semi-block">{{ trans('general.admin.enableGuests') }}</button>
+                        @endif
+                        @if (Helper::settings('sponsors'))
+                            <button id="disableSponsors" type="button" class="btn btn-danger btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.disableSponsors') }}</button>
+                        @else
+                            <button id="enableSponsors" type="button" class="btn btn-success btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.enableSponsors') }}</button>
+                        @endif
+                	</div>
+                </div>                
                 {{-- Guests Table --}}
             	@include('admin.guests')
+            	
+                {{-- Sponsors Table --}}
+            	@include('admin.guests')            	
             </div>
         </div>        
     </div>
@@ -56,11 +48,27 @@
 </script>
 
 <script>
+$('#disableGuests').click(function() {
+    
+});
+
+$('#enableGuests').click(function() {
+    
+});
+
+$('#disableSponsors').click(function() {
+    
+});
+
+$('#enableSponsors').click(function() {
+    
+});
+
 $('#guests .btn-primary').click(function () {
     console.log($(this));
     $rows = $(this).closest("tr").find("td");
     console.log($rows);
-    $('.modal-title').text('{{ trans('admin.edit.guest') }}: ' + $rows[1].innerText);
+    $('.modal-title').text('{{ trans('general.admin.edit.guest') }}: ' + $rows[1].innerText);
 
     $('#name').val($rows[1].innerText);
     $('#url').val($rows[2].innerText);
@@ -71,7 +79,7 @@ $('#guests .btn-primary').click(function () {
     console.log($(this));
     $rows = $(this).closest("tr").find("td");
     console.log($rows);
-    $('.modal-title').text('{{ trans('admin.edit.guest') }}: ' + $rows[1].innerText);
+    $('.modal-title').text('{{ trans('general.admin.edit.guest') }}: ' + $rows[1].innerText);
 
     $('#name').val($rows[1].innerText);
     $('#url').val($rows[2].innerText);

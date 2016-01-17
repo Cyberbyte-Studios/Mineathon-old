@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Core;
 
 use Cache;
+use Helper;
 use App\Video;
 use App\Charity;
 use Illuminate\Http\Request;
@@ -19,11 +20,11 @@ class CharityController extends Controller {
         $charity = new Charity;
         $video->name = $request->name;
         $charity->description = $request->description;
-        $charity->image = $this->upload($request->file('logo'), $request->name);
+        $charity->image = Helper::upload($request->file('logo'), $request->name);
 
         $charity->save();
 
-        $charity = Cache::rememberForever('charity_'.$id, function() {
+        $charity = Cache::rememberForever('+charity_'.$id, function() {
             return Video::with('charity')->findOrFail($id);
         });
         
@@ -47,14 +48,5 @@ class CharityController extends Controller {
         
         return view('core.addcharity', ['charities' => $charities]);
     }
-    
-    private function upload($logo, $name) {
-        if ($logo->isValid()) {
-            $filename = slug($name).'-'.str_random(5).'.'.$logo->getClientOriginalExtension();
-            $logo->move(public_path().'/public/uploads/images/', $filename);
-            $img = Image::make(public_path().'/public/uploads/images/'.$filename);
-            $img->fit(200, 200)->save(public_path().'/public/uploads/images/200/'.$filename);
-            return $filename;
-        }
-    }
+
 }
