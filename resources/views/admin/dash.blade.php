@@ -31,16 +31,17 @@
                 		<h3 class="panel-title"><i class="fa fa-long-arrow-right fa-video-camera"></i> {{ trans('general.admin.pendingTitle') }}</h3>
                 	</div>
                 	<div class="panel-body centered">
-                	    @if (Helper::settings('guests'))
-                            <a href="{{ url('toggleGuests') }}" class="btn btn-danger btn-semi-block">{{ trans('general.admin.disableGuests') }}</a>
-                        @else
-                            <a href="{{ url('toggleGuests') }}" class="btn btn-success btn-semi-block">{{ trans('general.admin.enableGuests') }}</a>
-                        @endif
-                        @if (Helper::settings('sponsors'))
-                            <a href="{{ url('toggleSponsors') }}" class="btn btn-danger btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.disableSponsors') }}</a>
-                        @else
-                            <a href="{{ url('toggleSponsors') }}" class="btn btn-success btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.enableSponsors') }}</a>
-                        @endif
+                        <h4>50</h4>
+                        <a href="{{ url('video/admin') }}" class="btn btn-success btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.adminVideo') }}</a>
+                	</div>
+                </div>
+                <div class="panel panel-default graphs">
+                	<div class="panel-heading">
+                		<h3 class="panel-title"><i class="fa fa-long-arrow-right fa-video-camera"></i> {{ trans('general.admin.pendingTitle') }}</h3>
+                	</div>
+                	<div class="panel-body centered">
+                        <h4>50</h4>
+                        <a href="{{ url('video/admin') }}" class="btn btn-success btn-semi-block"  style="margin-top:10px;">{{ trans('general.admin.adminVideo') }}</a>
                 	</div>
                 </div>                 
                 {{-- Guests Table --}}

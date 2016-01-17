@@ -10,12 +10,17 @@ use App\Http\Controllers\Controller;
 class VoteController extends Controller {
     
     public function votes() {
+        // $charities = Cache::rememberForever('charities', function() {
+        //     return Charity::where('published', 2)->with(['videos' => function($query) {
+        //         $query->where('published', 2);
+        //     }])->get();
+        // });
+        
         $charities = Cache::rememberForever('charities', function() {
             return Charity::with(['videos' => function($query) {
                 $query->where('published', 2);
             }])->get();
-        });
-        
+        });        
         return view('core.vote', ['charities' => $charities]);
     }
     
@@ -24,7 +29,7 @@ class VoteController extends Controller {
             'charity' => 'required',
         ]);        
 
-        $video = Video::where('id', $request->charity);
+        $video = Charity::where('id', $request->charity);
         $video->increment('votes');
         $video->save();
         

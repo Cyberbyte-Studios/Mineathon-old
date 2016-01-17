@@ -72,7 +72,6 @@
                                     </span>
                                 @endif                                 
                             </div>
-
                         </div>
 
                         <div class="form-group centered">

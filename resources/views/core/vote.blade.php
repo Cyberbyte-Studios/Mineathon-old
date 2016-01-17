@@ -52,7 +52,8 @@
 			var parent = self.parent();
 
 		    parent.find('.col-counter').html(++score).css({'color':'green'});
-            self.addClass('btn-success disabled');
+            self.addClass('btn-success');
+            $('.vote').addClass('disabled');
             self.removeClass('btn-primary');
             
 		    $.post("/vote",  {'charity' : charity}, function (data) {});

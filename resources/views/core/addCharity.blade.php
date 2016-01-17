@@ -5,40 +5,49 @@
     <div class="row welcomeFix margin">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
-                <div class="panel-heading centered">{{ trans('general.videoNew.title') }}</div>
+                <div class="panel-heading centered">{{ trans('general.charityNew.title') }}</div>
                 <div class="panel-body">
-                    <h3 class="centered">{{ trans('general.videoNew.rulesTitle') }}:</h3>
-                    {!! trans('general.videoNew.rules') !!}
-                    <p class="centered"><b>{!! trans('general.videoNew.rulesDisclamer') !!}</b></p>
+                    <h3 class="centered">{{ trans('general.charityNew.rulesTitle') }}:</h3>
+                    {!! trans('general.charityNew.rules') !!}
+                    <p class="centered"><b>{!! trans('general.charityNew.rulesDisclamer') !!}</b></p>
                     <br>
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/video/save') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/charity/save') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">{{ trans('general.videoNew.ytIDText') }}</label>
+                            <label class="col-md-4 control-label">{{ trans('general.videoNew.charity') }}</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="youtube" value="{{ old('youtube') }}">
-                                @if ($errors->has('youtube'))
+                                <input type="text" class="form-control" name="charity" value="{{ old('charity') }}">
+                                @if ($errors->has('charity'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('youtube') }}</strong>
+                                        <strong>{{ $errors->first('charity') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">{{ trans('general.videoNew.charity') }}</label>
+                            <label class="col-md-4 control-label">{{ trans('general.charityNew.desc') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" id="charity" name="charity">
-                            		@foreach($charities as $charity)
-                            		    <option value="{{ $charity->id }}">{{ $charity->name }}</option>
-                            		@endforeach
-                                </select>
-                                @if ($errors->has('charity'))
+                                <input class="form-control" type="textarea" value="{{ old('description') }}" name="description"/>
+                                @if ($errors->has('description'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('charity') }}</strong>
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">{{ trans('general.charityNew.www') }}</label>
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="url" value="{{ old('url') }}">
+                                @if ($errors->has('url'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('url') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -61,6 +70,18 @@
                                 @endif
                             </div>
                         </div>                       
+                        
+                        <div class="form-group centered">
+                            <div class="col-md-6 col-md-offset-4">
+                                {!! Recaptcha::render() !!}
+                                <br>
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span class="help-block">
+                                        <strong>{{ trans('errors.recaptcha') }}</strong>
+                                    </span>
+                                @endif                                 
+                            </div>
+                        </div>
 
                         <div class="form-group centered">
                             <div class="col-md-6 col-md-offset-4">

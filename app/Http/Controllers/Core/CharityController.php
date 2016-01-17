@@ -12,20 +12,21 @@ class CharityController extends Controller {
     
     public function newCharity(Request $request) {
         $this->validate($request, [
-            'name' => 'required|string|max:32',
+            'charity' => 'required|string',
             'description' => 'required|string',
-            'image' => 'required|image',
+            'url' => 'required|string',            
+            'g-recaptcha-response' => 'required|recaptcha',
         ]);
         
         $charity = new Charity;
-        $video->name = $request->name;
+        $charity->name = $request->charity;
         $charity->description = $request->description;
-        $charity->image = Helper::upload($request->file('logo'), $request->name);
+        $charity->url = $request->url;
 
         $charity->save();
 
-        $charity = Cache::rememberForever('+charity_'.$id, function() {
-            return Video::with('charity')->findOrFail($id);
+        $charity = Cache::rememberForever('charity_'.$id, function() use($id){
+            return Charity::findOrFail($id);
         });
         
         Cache::flush('charities');
@@ -33,20 +34,17 @@ class CharityController extends Controller {
         return view('core.charity', ['charity' => $charity]);
     }
     
-    public function video($id) {
-        $video = Cache::rememberForever('video_'.$id, function() use ($id) {
-            return Video::with('charity')->findOrFail($id); 
+    
+    public function charity($id) {
+        $charity = Cache::rememberForever('charity_'.$id, function() use($id) {
+            return Charity::findOrFail($id);
         });
         
-        return view('core.video', ['video' => $video]);
-    }
+        return view('core.charity', ['charity' => $charity]);
+    }    
     
     public function addCharity() {
-        $charities = Cache::rememberForever('charities', function() {
-            return Charity::get();
-        });
-        
-        return view('core.addcharity', ['charities' => $charities]);
+        return view('core.addCharity');
     }
 
 }

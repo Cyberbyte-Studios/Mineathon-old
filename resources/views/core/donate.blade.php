@@ -5,7 +5,7 @@
     <div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 centered">
-				<h1>Donate to < Charity Name >!</h1>
+				<h1>Donate to !</h1>
 				<h3>We have raised <strong id="raised"></strong> so far! Help us reach our goal of £10,000</h3>
                 <div class="raisedStats"></div>
 			</div><!-- /col-lg-8 -->
