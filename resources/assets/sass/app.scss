@@ -1,5 +1,6 @@
 $font-family-sans-serif: 'Lato', sans-serif;
 $brand-primary: #63B8FF;
+$fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "node_modules/font-awesome/scss/font-awesome.scss";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
@@ -211,9 +212,16 @@ hr {
   }
 }
 
+.navbar-nav {
+  margin: 0px;
+}
+
 @media (min-width: 750px) {
   .navbar-brand .small {
     display: none;
+  }
+  .navbar-nav > li {
+    margin-top: 6px;
   }
 }
 
@@ -284,11 +292,12 @@ textarea {
   position: absolute;
 }
 
-.navbar-collapse {
+.navbar-default .navbar-collapse {
   background-color: $brand-primary;
   border-color: $brand-primary;
 }
 
-.nav li a {
+.navbar-default .navbar-nav > li > a {
   font-size: 25px;
+  color: white;
 }

@@ -18,9 +18,5 @@ elixir(function(mix) {
 });
 
 elixir(function(mix) {
-    mix.copy('node_modules/font-awesome/fonts', 'public/fonts/font-awesome');
-});
-
-elixir(function(mix) {
     mix.version(['css/app.css', 'js/app.js']);
 });
