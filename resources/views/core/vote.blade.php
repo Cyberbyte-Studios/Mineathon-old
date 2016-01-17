@@ -62,8 +62,9 @@
             var score = self.data('votes');
             var parent = self.parent();
 
-            parent.find('.col-counter').html(++score).css({'color': 'green'});
-            self.addClass('btn-success disabled');
+		    parent.find('.col-counter').html(++score).css({'color':'green'});
+            self.addClass('btn-success');
+            $('.vote').addClass('disabled');
             self.removeClass('btn-primary');
 
             $.post("/vote", {'charity': charity, '_token': '{{ csrf_token() }}'}, function (data) {

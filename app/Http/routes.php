@@ -26,7 +26,7 @@ Route::group(['middleware' => 'web'], function () {
     });
     
     Route::get('/donate', function () {
-        return view('core.donate');
+        return view('core.donateTemp');
     });
     
     Route::get('/about', function () {
@@ -40,10 +40,13 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/charity/new', 'Core\CharityController@addCharity');
     Route::post('/charity/save', 'Core\CharityController@newCharity');
     Route::get('/charity/{id}', 'Core\CharityController@charity');
+    Route::get('/charity/admin', 'Core\DashController@charity');
+  
     
     Route::get('/video/new', 'Core\VideoController@addVideo');
     Route::post('/video/save', 'Core\VideoController@newVideo');
     Route::get('/video/{id}', 'Core\VideoController@video');
+    Route::get('/video/admin', 'Core\DashController@video');
     
     Route::post('/vote', 'Core\VoteController@vote');
     

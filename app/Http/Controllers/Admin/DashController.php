@@ -21,6 +21,22 @@ class DashController extends Controller {
         return view('admin.dash', ['guests' => $guests, 'sponsors' => $sponsors]);
     }
     
+    public function video() {
+        $videos = Cache::rememberForever('videos', function() {
+            return Video::all();
+        });
+
+        return view('admin.video', ['videos' => $videos]);
+    }
+    
+    public function charity() {
+        $videos = Cache::rememberForever('videos', function() {
+            return Video::all();
+        });
+
+        return view('admin.video', ['videos' => $videos]);
+    }    
+    
     public function toggleGuests() {
         if (Helper::settings('guests')) {
             Helper::updateSettings('guests','0');
