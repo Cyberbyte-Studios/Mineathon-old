@@ -5,6 +5,8 @@ use DB;
 use Auth;
 use Cache;
 use App\Setting;
+use App\Guest;
+use App\Sponsor;
 
 class Helper {
 
@@ -31,13 +33,13 @@ class Helper {
     
     public function sponsors() {
         return Cache::rememberForever('sponsors', function() {
-            Sponsor::all();
+            return Sponsor::all();
         });
     }
     
     public function guests() {
         return Cache::rememberForever('guests', function() {
-            Guest::all();
+            return Guest::all();
         });
     }
     

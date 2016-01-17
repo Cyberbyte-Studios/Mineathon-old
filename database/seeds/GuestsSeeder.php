@@ -29,6 +29,5 @@ class GuestsSeeder extends Seeder
             'image'  =>  'https://placeholdit.imgix.net/~text?txtsize=33&txt=Soon&w=200&h=200',
             'url'  =>  'https://placeholdit.imgix.net/~text?txtsize=33&txt=Soon&w=200&h=200',             
         ));
-        
     }
 }

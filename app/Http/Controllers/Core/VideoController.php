@@ -16,21 +16,19 @@ class VideoController extends Controller {
             'youtube' => 'required|alpha_dash|max:32',
         ]);
         
-        $video = new Video;
-        $video->charity_id = $request->charity;
-        $video->youtube = $request->youtube;
-        $video->user = $request->email;
-        $video->save();
+        $id = DB::table('users')->insertGetId([
+            'charity_id' => $request->charity, 
+            'youtube' => $request->youtube,
+            'user' => $request->email
+        ]);
         
-        dd($video);
-
         $video = Cache::rememberForever('video_'.$id, function() {
             return Video::with('charity')->findOrFail($id);
         });
         
         Cache::flush('videos');
         
-        return view('core.video', ['video' => $video]);
+        return redirect('video/'.$id);
     }
     
     public function video($id) {
