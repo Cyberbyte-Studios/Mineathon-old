@@ -1,6 +1,5 @@
 window.$ = window.jQuery = require('jquery')
 require('bootstrap-sass');
-require('font-awesome');
 
 var sse = new EventSource('https://imraising.tv/api/v1/listen?apikey=JlTRn6Z2vArDq_-19cdvfg');
 var bootstrap_alert = function() {};

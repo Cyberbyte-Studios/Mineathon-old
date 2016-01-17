@@ -5758,8 +5758,8 @@ button.close {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.eot?v=4.5.0");
-  src: url("//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("//netdna.bootstrapcdn.com/font-awesome/4.5.0/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
+  src: url("../fonts/fontawesome-webfont.eot?v=4.5.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -7924,7 +7924,7 @@ hr {
 
 /* +++++ WRAP SECTIONS +++++ */
 #header {
-  padding-top: 150px;
+  padding-top: 130px;
   padding-bottom: 70px;
   background-color: #f2f2f2; }
 
@@ -7944,63 +7944,6 @@ hr {
   color: white;
   text-transform: uppercase;
   padding-bottom: 20px; }
-
-/* +++++ Color Wraps / Blog Page +++++ */
-#grey {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: #f2f2f2; }
-
-#white {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: #ffffff; }
-
-/* Blog Date*/
-bd {
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #d2d2d2;
-  font-weight: 700; }
-
-/* Blog Author*/
-ba {
-  font-size: 12px;
-  text-transform: uppercase; }
-
-/* Blog Quote */
-.bq {
-  font-size: 22px;
-  padding-top: 30px; }
-
-/* Blog Tags */
-bt {
-  font-size: 12px; }
-
-/* ================== PORTFOLIO IMAGES HOVER EFFECT ================== */
-/* Effects also are controled by hover.zoom.js */
-.zoom {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  background: transparent url(../img/loader.gif) no-repeat center; }
-
-.zoomOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: none;
-  background-image: url(../img/zoom.png);
-  background-repeat: no-repeat;
-  background-position: center; }
-
-.zoom2 {
-  opacity: 1; }
-
-.zoom2:hover {
-  opacity: 0.5; }
 
 /* glyphicon Configuration */
 .glyphicon {
@@ -8023,9 +7966,6 @@ bt {
 
 .myBlock {
   display: inline-block; }
-
-.adminTable .panel-title {
-  height: 35px; }
 
 @media (max-width: 750px) {
   .welcomeFix {
@@ -8091,10 +8031,24 @@ textarea {
   height: 68px;
   background-color: #63B8FF; }
 
-.navbar-brand img {
-  display: inline; }
-
 .navbar-brand .small {
-  padding-top: 20px; }
+  padding-top: 5px;
+}
+
+.navbar-brand {
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+
+.navbar-collapse {
+  background-color: #63B8FF;
+  border-color: #63B8FF;
+}
+
+.nav li a {
+  font-size: 25px;
+}
 
 /*# sourceMappingURL=app.css.map */

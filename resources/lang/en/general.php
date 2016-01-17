@@ -77,4 +77,9 @@ return [
     'donate' => [
         'donateTo' => 'Donate to Mineathon',
     ],
+
+    'meta' => [
+        'description' => 'Mineathon is a 24-hour streaming event that aims to raise money for a charity that the community votes upon at the beginning of every year.',
+        'author' => 'CyberByte',
+    ]
 ];

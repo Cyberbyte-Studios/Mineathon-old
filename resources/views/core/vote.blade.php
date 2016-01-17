@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<div class="container padding">
+<div class="container">
 	<h2 class="text-center">Don't see a cause you want to support? <a href="{{ url('video/new') }}" class="btn btn-primary btn-lg btn-small-block" style="float:right;">Suggest your own!</a></h2>
 	<div class="row margin centered">
 		@foreach($charities as $charity)
@@ -37,8 +37,6 @@
 		@endforeach
 	</div>
 </div>
-@if (Auth::check())
-@endif
 
 {{-- Sponsor  Section --}}
 @include('templates.sponsors')

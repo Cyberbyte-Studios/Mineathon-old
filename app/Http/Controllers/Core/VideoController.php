@@ -1,11 +1,11 @@
 <?php
 namespace App\Http\Controllers\Core;
 
-use Cache;
-use App\Video;
 use App\Charity;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Video;
+use Cache;
+use Illuminate\Http\Request;
 
 class VideoController extends Controller {
     
@@ -21,8 +21,8 @@ class VideoController extends Controller {
             'youtube' => $request->youtube,
             'user' => $request->email
         ]);
-        
-        $video = Cache::rememberForever('video_'.$id, function() {
+
+        $video = Cache::rememberForever('video_' . $id, function () use ($id) {
             return Video::with('charity')->findOrFail($id);
         });
         
