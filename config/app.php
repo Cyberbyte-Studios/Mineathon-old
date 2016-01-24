@@ -159,6 +159,7 @@ return [
 
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\TranslationManager\ManagerServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
     ],
 

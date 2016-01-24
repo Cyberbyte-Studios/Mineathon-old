@@ -7937,7 +7937,7 @@ hr {
   padding-bottom: 20px; }
 
 /* glyphicon Configuration */
-.glyphicon {
+.glyphiconLarge {
   font-size: 40px;
   color: #63B8FF; }
 
@@ -8060,5 +8060,8 @@ textarea {
 
 .enable {
   margin-top: 15px; }
+
+.panel-heading .myBlock {
+  color: white; }
 
 /*# sourceMappingURL=app.css.map */

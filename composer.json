@@ -10,7 +10,8 @@
         "barryvdh/laravel-debugbar": "^2.1",
         "predis/predis": "^1.0",
         "greggilbert/recaptcha": "^2.1",
-        "barryvdh/laravel-ide-helper": "^2.1"
+        "barryvdh/laravel-ide-helper": "^2.1",
+        "barryvdh/laravel-translation-manager": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

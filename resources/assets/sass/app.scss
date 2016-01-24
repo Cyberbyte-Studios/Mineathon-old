@@ -161,7 +161,7 @@ hr {
 
 /* glyphicon Configuration */
 
-.glyphicon {
+.glyphiconLarge {
   font-size: 40px;
   color: $brand-primary;
 }
@@ -323,4 +323,8 @@ textarea {
 
 .enable {
   margin-top: 15px;
+}
+
+.panel-heading .myBlock {
+  color: white;
 }
