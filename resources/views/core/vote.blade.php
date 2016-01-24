@@ -4,23 +4,23 @@
     <div class="container centered">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h1>{{ trans('content.vote.header') }}</h1>
-                <p>{{ trans('content.vote.subHeader') }}</p>
+                <h1>{{ trans('vote.header') }}</h1>
+                <p>{{ trans('vote.subHeader') }}</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-8">
-                <h2 id="suggest">{{ trans('content.vote.support') }}</h2>
+                <h2 id="suggest">{{ trans('vote.support') }}</h2>
             </div>
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-sm-6">
                         <a href="{{ url('charity/new') }}"
-                           class="btn btn-primary btn-lg">{{ trans('content.vote.suggest.charity') }}</a>
+                           class="btn btn-primary btn-lg">{{ trans('vote.suggest.charity') }}</a>
                     </div>
                     <div class="col-sm-6">
                         <a href="{{ url('video/new') }}"
-                           class="btn btn-primary btn-lg">{{ trans('content.vote.suggest.video') }}!</a>
+                           class="btn btn-primary btn-lg">{{ trans('vote.suggest.video') }}!</a>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                                 </div>
                             @endforeach
                         @else
-                            <h1>{{ trans('general.vote.noVideos') }}</h1>
+                            <h1>{{ trans('vote.noVideos') }}</h1>
                         @endif
                     </div>
                     <div class="panel-footer">
@@ -52,11 +52,11 @@
                                 @if($voted)
                                     <button type="button" class="btn btn-primary btn-lg vote disabled"
                                             data-charity="{{ $charity->id }}"
-                                            data-votes="{{ $charity->votes }}">{{ trans('content.vote.wait') }}</button>
+                                            data-votes="{{ $charity->votes }}">{{ trans('vote.wait') }}</button>
                                 @else
                                     <button type="button" class="btn btn-primary btn-lg vote"
                                             data-charity="{{ $charity->id }}"
-                                            data-votes="{{ $charity->votes }}">{{ trans('content.vote.vote') }}</button>
+                                            data-votes="{{ $charity->votes }}">{{ trans('vote.vote') }}</button>
                                 @endif
                             </div>
                             <div class="col-xs-4">

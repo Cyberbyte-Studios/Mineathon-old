@@ -1,29 +1,40 @@
 <div id="footer">
     <div class="row mt centered">
         <div class="col-lg-3">
-            <h4>{{ trans('general.footer.colum1Name') }}</h4>
+            <h4>{{ trans('footer.header1') }}</h4>
             <p>
-                {!! trans('general.footer.colum1Text') !!}
+                {!! trans('footer.body1') !!}
             </p>
         </div>
 
         <div class="col-lg-3">
-            <h4>{{ trans('general.footer.colum2Name') }}</h4>
+            <h4>{{ trans('footer.header2') }}</h4>
             <p>
-                {!! trans('general.footer.colum2Text') !!}
+                {!! trans('footer.body2') !!}
             </p>
         </div>
 
         <div class="col-lg-3">
-            <h4 id="loadingDonation"><i class="fa fa-refresh fa-spin"></i> {{ trans('general.footer.loading') }}</h4>
-            <h4 id="errorDonation" style="display: none"><i class="fa fa-exclamation-triangle"></i> {{ trans('general.footer.error') }}</h4>
+            <h4 id="loadingDonation">
+                <i class="fa fa-refresh fa-spin"></i>
+                {{ trans('footer.loading') }}
+            </h4>
+
+            <h4 id="errorDonation" style="display: none">
+                <i class="fa fa-exclamation-triangle"></i>
+                {{ trans('footer.error') }}
+            </h4>
+
             <div id="donation" style="display: none">
-                <h4>{{ trans('general.footer.latest') }}</h4>
-                <p>{{ trans('general.footer.from') }}: <strong id="name"></strong><br>
-                {{ trans('general.footer.amount') }}: £<strong id="amount"></strong><br>
-                {{ trans('general.footer.message') }}: <strong id="message"></strong></p>
+                <h4>{{ trans('footer.latest') }}</h4>
+                <p>{{ trans('footer.from') }}: <strong id="name"></strong><br>
+                    {{ trans('footer.amount') }}: £<strong id="amount"></strong><br>
+                    {{ trans('footer.message') }}: <strong id="message"></strong></p>
             </div>
-            <h4 id="allDonations" style="display: none">{{ trans('general.footer.total') }}: £<span id="totalDonations"></span></h4>
+
+            <h4 id="allDonations" style="display: none">{{ trans('footer.total') }}: £
+                <span id="totalDonations"></span>
+            </h4>
         </div>
 
         <div class="col-lg-3">
@@ -40,6 +51,5 @@
                 }(document, "script", "twitter-wjs");</script>
         </div>
         {{ Helper::debug() }}
-    </div>
     </div>
 </div>
