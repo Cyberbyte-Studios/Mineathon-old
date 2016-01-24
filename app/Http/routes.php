@@ -16,6 +16,22 @@ Route::group(['middleware' => 'api'], function () {
     Route::post('/newCharity', 'Core\CharityController@newCharity');
 });
 
+Route::group(['middleware' => ['web', 'auth']], function () {
+    Route::get('/dashboard', 'Admin\DashController@dashboard');
+    Route::get('/toggleGuests', 'Admin\DashController@toggleGuests');
+    Route::get('/toggleSponsors', 'Admin\DashController@toggleSponsors');
+    
+    Route::get('/video/admin', 'Core\VideoController@pending');
+    Route::post('/video/approve', 'Core\VideoController@approve');
+    Route::post('/video/deny', 'Core\VideoController@deny');
+    
+    Route::get('/charity/admin', 'Core\CharityController@pending');
+    Route::post('/charity/approve', 'Core\CharityController@approve');
+    Route::post('/charity/deny', 'Core\CharityController@deny');
+    
+    Route::post('/guest/new', 'Admin\DashController@addGuest');      
+});
+
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
     
@@ -40,20 +56,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/charity/new', 'Core\CharityController@addCharity');
     Route::post('/charity/save', 'Core\CharityController@newCharity');
     Route::get('/charity/{id}', 'Core\CharityController@charity');
-    Route::get('/charity/admin', 'Core\DashController@charity');
   
     
     Route::get('/video/new', 'Core\VideoController@addVideo');
     Route::post('/video/save', 'Core\VideoController@newVideo');
     Route::get('/video/{id}', 'Core\VideoController@video');
-    Route::get('/video/admin', 'Core\DashController@video');
     
     Route::post('/vote', 'Core\VoteController@vote');
     
-    Route::get('/dashboard', 'Admin\DashController@dashboard');
-    
-    Route::get('/toggleGuests', 'Admin\DashController@toggleGuests');
-    Route::get('/toggleSponsors', 'Admin\DashController@toggleSponsors');
-    
 });
-

@@ -11,4 +11,8 @@ class Video extends Model {
     public function charity() {
         return $this->belongsTo('App\Charity');
     }
+    
+    public function user() {
+        return $this->hasOne('App\User');
+    }
 }

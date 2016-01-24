@@ -1,24 +1,11 @@
 <?php
 
 return [
-    'submit' => 'Submit',
-    'login' => 'Login',  
-    'guests' => 'Guests', 
-    'sponsors' => 'Sponsors', 
-    'loginFirst' => 'You must login first',
-    
     'about' => [
         'header' => 'About Mineathon!',
         'subHeader' => 'The Mineathon Event',
         'links' => 'Endorsements, Acknowledgements and Media Links',
         'video' => 'A8xN6RGpTxs',
-    ],
-    
-    'nav' => [
-        'about' => 'About',
-        'donate' => 'Donate',
-        'vote' => 'Vote',
-        'credits' => 'Credits',
     ],
     
     'home' => [
@@ -38,25 +25,6 @@ return [
             'charity' => 'Suggest Charity',
             'video' => 'Submit Video',
         ]
-    ],
-    
-    'footer' => [
-        'colum1Name' => 'Contact',
-        'colum1Text' => '<span>contact@mineathon.com </span><br/><span>webmaster@mineathon.com </span>',
-        
-        'colum2Name' => 'Social Media',
-        'colum2Text' => '<a href="https://twitter.com/mineathon_event"><i class="fa fa-twitter"></i> Twitter</a><br/>
-        <a href="https://www.facebook.com/MineAthon"><i class="fa fa-facebook-official"></i> Facebook</a><br/>
-        <a href="https://plus.google.com/+MineathonEvent"><i class="fa fa-google-plus"></i> Google+</a><br/>',
-        'colum3Name' => 'Feed',
-        
-        'loading' => 'Loading',
-        'latest' => 'Latest Donation',
-        'from' => 'From',
-        'amount' => 'Ammount',
-        'message' => 'Message',
-        'error' => 'Unable to get donation',
-        'total' => 'Total'
     ],
     
     'videoNew' => [
@@ -88,10 +56,4 @@ return [
     'donate' => [
         'donateTo' => 'Donate to Mineathon',
     ],
-
-    'meta' => [
-        'description' => 'Mineathon is a 24-hour streaming event that aims to raise money for a charity that the community votes upon at the beginning of every year.',
-        'author' => 'CyberByte',
-        'keywords' => 'charity, mineathon, vote, event, donate, minecraft'
-    ]
 ];

@@ -1,5 +1,4 @@
 @if (Helper::settings('sponsors'))
-<div class="container padding">
 	<h1 class="text-center">{{ trans('general.sponsors') }}</h1>
 	<div class="row mt centered">
 		@foreach (Helper::sponsors() as $sponsor)
@@ -9,5 +8,4 @@
 		</div>
 		@endforeach
 	</div>
-</div>
 @endif

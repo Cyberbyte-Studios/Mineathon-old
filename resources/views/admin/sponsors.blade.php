@@ -1,16 +1,16 @@
 <div class="panel panel-default adminTable" id="sponsors">
     <div class="panel-heading">
-        <h4><i class="fa fa-users fa-fw"></i> {{ trans('general.admin.sponsors') }} </h4>
+        <h4><i class="fa fa-users fa-fw"></i> {{ trans('general.sponsors') }} </h4>
     </div>
     <div class="panel-body">
         <div class="noWrap">
             <table class="table table-hover table-striped">
                 <thead>
                     <tr class="centered">
-                        <th>{{ trans('general.admin.image') }}</th>
-                        <th>{{ trans('general.admin.name') }}</th>
-                        <th>{{ trans('general.admin.url') }}</th>
-                        <th>{{ trans('general.admin.actions') }}</th>                        
+                        <th>{{ trans('dashboard.admin.image') }}</th>
+                        <th>{{ trans('dashboard.admin.name') }}</th>
+                        <th>{{ trans('dashboard.admin.url') }}</th>
+                        <th>{{ trans('dashboard.admin.actions') }}</th>                        
                     </tr>
                 </thead>
                 <tbody>

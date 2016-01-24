@@ -13,4 +13,8 @@ class Charity extends Model {
     public function videos() {
         return $this->hasMany('App\Video');
     }
+    
+    public function user() {
+        return $this->hasOne('App\User');
+    }
 }

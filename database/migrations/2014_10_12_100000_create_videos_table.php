@@ -17,6 +17,7 @@ class CreateVideosTable extends Migration
             $table->string('user');
             $table->string('charity_id');
             $table->string('youtube');
+            $table->integer('user_id')->nullable();
             $table->integer('published')->default(0);
             $table->softDeletes();
             $table->timestamps();

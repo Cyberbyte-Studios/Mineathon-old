@@ -1,26 +1,29 @@
 @extends('templates.template')
 
 @section('content')
-    <div class="container">
-        <div id="header">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 centered">
-                    <h1>{{ trans('general.vote.header') }}</h1>
-                    <p>{{ trans('general.vote.subHeader') }}</p>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <h2 class="text-center">{{ trans('general.vote.support') }}</h2>
-            </div>
-            <div class="col-md-2">
-                <a href="{{ url('video/new') }}" class="btn btn-primary btn-lg">{{ trans('general.vote.suggest.charity') }}</a>
-            </div>
-            <div class="col-md-2">
-                <a href="{{ url('charity/new') }}" class="btn btn-primary btn-lg">{{ trans('general.vote.suggest.video') }}!</a>
+    <div class="container centered">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1>{{ trans('content.vote.header') }}</h1>
+                <p>{{ trans('content.vote.subHeader') }}</p>
             </div>
         </div>
-
-        <div class="row centered">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 id="suggest">{{ trans('content.vote.support') }}</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="{{ url('charity/new') }}" class="btn btn-primary btn-lg">{{ trans('content.vote.suggest.charity') }}</a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="{{ url('video/new') }}" class="btn btn-primary btn-lg">{{ trans('content.vote.suggest.video') }}!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             @foreach($charities as $charity)
                 <div class="panel panel-primary">
                     <div class="panel-heading">
@@ -38,27 +41,25 @@
                         @endforeach
                     </div>
                     <div class="panel-footer">
-                        <button type="button" class="btn btn-primary btn-lg btn-semi-block vote
-                        	@if($voted)
-                        	disabled
-                        	@endif
-                        	"
-                                data-charity="{{ $charity->id }}" data-votes="{{ $charity->votes }}">
-                        	@if($voted)
-                        	{{ trans('general.vote.wait') }}
-                        	@else
-                        	{{ trans('general.vote.vote') }}
-                        	@endif
-                        </button>
-                        <h3 class="col-counter" style="float:right;"> {{ $charity->votes }} </h3>
+                        <div class="row">
+                            <div class="col-xs-8">
+                            	@if($voted)
+                            	<button type="button" class="btn btn-primary btn-lg vote disabled" data-charity="{{ $charity->id }}" data-votes="{{ $charity->votes }}">{{ trans('content.vote.wait') }}</button>
+                            	@else
+                            	<button type="button" class="btn btn-primary btn-lg vote" data-charity="{{ $charity->id }}" data-votes="{{ $charity->votes }}">{{ trans('content.vote.vote') }}</button>
+                            	@endif
+                            </div>
+                            <div class="col-xs-4">
+                                <h3 class="col-counter centered"> {{ $charity->votes }} </h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             @endforeach
         </div>
-    </div>
-
     {{-- Sponsor  Section --}}
     @include('templates.sponsors')
+    </div>
 @endsection
 
 @push('scripts')

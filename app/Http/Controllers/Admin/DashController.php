@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Cache;
+use DB;
 use App\Guest;
 use App\Sponsor;
 use Helper;
@@ -18,7 +19,10 @@ class DashController extends Controller {
             return Sponsor::get();
         });      
         
-        return view('admin.dash', ['guests' => $guests, 'sponsors' => $sponsors]);
+        $pending['videos'] = DB::table('videos')->where('published', '0')->count();
+        $pending['charities']  = DB::table('charities')->where('published', '0')->count();
+        
+        return view('admin.dash', ['guests' => $guests, 'sponsors' => $sponsors, 'pending' => $pending]);
     }
     
     public function video() {
@@ -95,31 +99,5 @@ class DashController extends Controller {
         });      
         
         return view('admin.dash', ['guests' => $guests, 'sponsors' => $sponsors]);     
-    }
-    
-    public function addSponsor(Request $request) {
-        $this->validate($request, [
-            'name' => 'required|string|max:32',
-            'url' => 'required|string',
-            'image' => 'required|image',
-        ]);
-        
-        $sponsor = new Sponsor;
-        $sponsor->name = $request->name;
-        $sponsor->url = $request->url;
-        $sponsor->image = Helper::upload($request->file('logo'), $request->name);
-
-        $sponsor->save();
-
-        Cache::flush('sponsors');
-
-        $guests = Cache::rememberForever('guests', function() {
-            return Guest::get();
-        });
-        $sponsors = Cache::rememberForever('sponsors', function() {
-            return Sponsor::get();
-        });      
-        
-        return view('admin.dash', ['guests' => $guests, 'sponsors' => $sponsors]);           
     }
 }

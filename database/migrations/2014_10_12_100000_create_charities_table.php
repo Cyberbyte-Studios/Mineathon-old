@@ -17,7 +17,8 @@ class CreateCharitiesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('votes');
-            $table->string('url');            
+            $table->string('url');
+            $table->integer('user_id')->nullable();
             $table->integer('published')->default(0);
             $table->softDeletes();
             $table->timestamps();

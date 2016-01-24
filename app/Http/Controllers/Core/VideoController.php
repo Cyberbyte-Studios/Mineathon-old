@@ -1,8 +1,9 @@
 <?php
 namespace App\Http\Controllers\Core;
 
-use Cache;
 use DB;
+use Auth;
+use Cache;
 use App\Video;
 use App\Charity;
 use Illuminate\Http\Request;
@@ -32,13 +33,35 @@ class VideoController extends Controller {
         
         return redirect('video/'.$id);
     }
-    
+
     public function video($id) {
         $video = Cache::rememberForever('video_'.$id, function() use ($id) {
             return Video::with('charity')->findOrFail($id); 
         });
         
         return view('core.video', ['video' => $video]);
+    }
+
+    public function pending() {
+        $videos = Video::where('published', '0')->with('charity')->get();
+
+        return view('admin.pendingVideo', ['videos' => $videos]);        
+    }
+    
+    public function approve(Request $request) {
+        Cache::flush('videos');
+        $this->validate($request, ['id' => 'required|integer']);
+        $video = Video::findOrFail($request->id);
+        $video->published = 2;
+        $video->save();
+    }
+    
+    public function deny(Request $request) {
+        Cache::flush('videos');
+        $this->validate($request, ['id' => 'required|integer']);
+        $video = Video::findOrFail($request->id);
+        $video->published = 1;
+        $video->save();               
     }
     
     public function addVideo() {

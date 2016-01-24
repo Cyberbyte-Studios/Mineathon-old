@@ -1,5 +1,4 @@
 @if (Helper::settings('guests'))
-<div class="container padding">
 	<h1 class="text-center">{{ trans('general.guests') }}</h1>
 	<div class="row mt centered">
 		@foreach (Helper::guests() as $guest)
@@ -9,5 +8,4 @@
 		</div>
 		@endforeach
 	</div>
-</div>
 @endif
