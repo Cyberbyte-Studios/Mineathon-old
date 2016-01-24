@@ -12221,7 +12221,7 @@ $(function () {
         try {
             console.log('Got latest donation', data[0]);
             $('#name').text(data[0].nickname);
-            $('#amount').html(data[0].amount.display.total);
+            $('#amount').html(Math.round(data[0].amount.display.total * 100) / 100);
             $('#message').html(data[0].message);
             $('#loadingDonation').fadeOut(1000, function () {
                 $('#donation').fadeIn(1000);
@@ -12235,7 +12235,7 @@ $(function () {
     $.getJSON("https://imraising.tv/api/v1/donations/total?apikey=bfncDsxXbt8WB0wiRvwXVw", function (data) {
         try {
             console.log('Got total donations', data[0]);
-            $('#totalDonations').text(data[0].total);
+            $('#totalDonations').text(Math.round(data[0].total * 100) / 100);
             $('#loadingDonation').fadeOut(1000, function () {
                 $('#allDonations').fadeIn(1000);
             });
