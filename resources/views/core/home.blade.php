@@ -4,8 +4,8 @@
     <div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 centered">
-				<h1>{{ trans('content.home.header') }}</h1>
-				{!! trans('content.home.subHeader') !!}
+				<h1>{{ trans('home.header') }}</h1>
+				{!! trans('home.subHeader') !!}
 			</div>
 		</div>
 	{{-- Guests --}}
