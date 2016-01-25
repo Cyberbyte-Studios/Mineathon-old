@@ -1,6 +1,6 @@
 <div class="panel panel-default adminTable" id="guests">
     <div class="panel-heading">
-        <h4 class="myBlock"><i class="fa fa-users fa-fw"></i> {{ trans('general.guests') }} </h4>
+        <h4 style="color:black;"  class="myBlock"><i class="fa fa-users fa-fw"></i> {{ trans('general.guests') }} </h4>
         <button class="btn btn-success myBlock hidden-xs"><i class="fa fa-btn fa-file"></i> New</button>
     </div>
     <div class="panel-body">
