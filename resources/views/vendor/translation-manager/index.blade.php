@@ -155,7 +155,7 @@
 <script type="text/javascript"
         src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
-<script>//https://github.com/rails/jquery-ujs/blob/master/src/rails.js
+<script>
     (function (e, t) {
         if (e.rails !== t) {
             e.error("jquery-ujs has already been loaded!")
