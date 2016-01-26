@@ -19,6 +19,7 @@ return array (
     'disableGuests' => 'Disable Guests Section',
     'disableSponsors' => 'Disable Sponsors Section',
     'admin' => 'Admin',
+    'logout' => 'Logout',
     'new' => 'New',
     'name' => 'Name',
     'url' => 'URL',
