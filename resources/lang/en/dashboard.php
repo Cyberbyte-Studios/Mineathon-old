@@ -6,6 +6,9 @@ return array (
   'guests' => 'Guests',
   'sponsors' => 'Sponsors',
   'loginFirst' => 'You must login first',
+  'newStaff' => 'Approve Users',
+  'awaiting' => 'Account Awaiting Approval',
+  'logout' => 'Logout',
   'admin' => 
   array (
     'title' => 'Mineathon Admin Dashboard',
@@ -44,5 +47,8 @@ return array (
         'sponsor' => 'Edit Sponsor',
       ),
     ),
+    'voteDonate' => 'Vote/Donation Settings',
   ),
+  'enableDonate' => 'Enable Donation Page',
+  'disableDonate' => 'Disable Donation Page',
 );

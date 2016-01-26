@@ -8,12 +8,22 @@ class SettingsSeeder extends Seeder
     {
         App\Setting::create(array(
             'key'    =>  'sponsors',
-            'value'  =>  '1',
+            'value'  =>  '0',
         ));
         
         App\Setting::create(array(
             'key'    =>  'guests',
-            'value'  =>  '1',
+            'value'  =>  '0',
         ));
+        
+        App\Setting::create(array(
+            'key'    =>  'donate',
+            'value'  =>  '0',
+        ));
+        
+        App\Setting::create(array(
+            'key'    =>  'votes',
+            'value'  =>  '0',
+        ));         
     }
 }

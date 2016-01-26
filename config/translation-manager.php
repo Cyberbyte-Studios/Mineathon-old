@@ -15,6 +15,7 @@ return array(
 		'middleware' => [
 			'web',
 			'auth',
+			'level3',
 		],
     ],
 

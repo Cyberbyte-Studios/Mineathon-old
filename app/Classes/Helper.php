@@ -4,11 +4,20 @@ namespace App\Classes;
 use DB;
 use Auth;
 use Cache;
+use Image;
 use App\Setting;
 use App\Guest;
 use App\Sponsor;
 
 class Helper {
+
+    public function getPendingCharities () {
+        return DB::table('charities')->where('published', '0')->count();
+    }
+    
+    public function getPendingVideos () {
+        return DB::table('videos')->where('published', '0')->count();
+    }
 
     public function debug() {
         if (Auth::check()) {
@@ -16,21 +25,32 @@ class Helper {
 		        $load = sys_getloadavg();
 		        echo ' Page Time: '. microtime(true) - LARAVEL_START;
 		        echo ' Load: ' . $load[0].' '.$load[1].' '.$load[2];
-		        echo ' Server: '. $_SERVER['SERVER_ADDR'];
+		        echo ' Server: <a href="#" data-toggle="tooltip" title="'.$_SERVER['SERVER_ADDR'].'">'.$this->serverName($_SERVER['SERVER_ADDR']).'</a>';
     		}
 		}
     }
     
-    public function upload($logo, $name) {
-        if ($logo->isValid()) {
-            $filename = slug($name).'-'.str_random(5).'.'.$logo->getClientOriginalExtension();
-            $logo->move(public_path().'/public/uploads/images/', $filename);
-            $img = Image::make(public_path().'/public/uploads/images/'.$filename);
-            $img->fit(200, 200)->save(public_path().'/public/uploads/images/200/'.$filename);
-            return $filename;
+    public function serverName($ip) {
+        switch ($ip) {
+            case '10.131.119.172':
+                return 'Server 1';
+            case '10.131.136.35':
+                return 'Server 2';
+            default:
+                return $ip;
         }
     }
     
+    public function upload($logo, $name) {
+        if ($logo->isValid()) {
+            $filename = str_slug($name).'-'.str_random(5).'.'.$logo->getClientOriginalExtension();
+            $logo->move(public_path().'/uploads/images/', $filename);
+            $img = Image::make(public_path().'/uploads/images/'.$filename);
+            $img->fit(200, 200)->save(public_path().'/uploads/images/200/'.$filename);
+            return $filename;
+        }
+    }
+
     public function sponsors() {
         return Cache::rememberForever('sponsors', function() {
             return Sponsor::all();

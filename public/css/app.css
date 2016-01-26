@@ -7825,6 +7825,10 @@ button.close {
 .fa-percent:before {
   content: ""; }
 
+html {
+  position: relative;
+  min-height: 100%; }
+
 body {
   background-color: #f2f2f2;
   font-family: 'Montserrat', sans-serif;
@@ -7919,12 +7923,13 @@ hr {
   padding-top: 50px;
   padding-bottom: 50px; }
 
-/* +++++ WRAP SECTIONS +++++ */
 @media (max-width: 750px) {
   #header {
     padding-top: 50px; } }
 
 #footer {
+  bottom: 0;
+  width: 100%;
   background-color: #2f2f2f;
   padding: 50px; }
 
@@ -8044,7 +8049,10 @@ textarea {
     padding-top: 70px;
     padding-bottom: 60px; }
   .navbar {
-    height: 90px; } }
+    height: 90px; }
+  #navbar-brand-centered {
+    padding-left: 20%;
+    padding-right: 20%; } }
 
 @media (max-width: 560px) {
   .adminTable .noWrap {
@@ -8063,5 +8071,27 @@ textarea {
 
 .panel-heading .myBlock {
   color: white; }
+
+#navbar-brand-centered {
+  padding-left: 20%;
+  padding-right: 20%; }
+
+@media (max-width: 1240px) {
+  #navbar-brand-centered {
+    padding-left: 5%;
+    padding-right: 5%; } }
+
+@media (min-width: 1240px) {
+  body {
+    margin-bottom: 350px; }
+  #footer {
+    position: absolute;
+    height: 350px; } }
+
+#cookie {
+  margin: 25px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 9999; }
 
 /*# sourceMappingURL=app.css.map */

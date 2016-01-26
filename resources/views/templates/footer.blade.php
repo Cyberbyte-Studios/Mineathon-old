@@ -15,26 +15,30 @@
         </div>
 
         <div class="col-lg-3">
-            <h4 id="loadingDonation">
-                <i class="fa fa-refresh fa-spin"></i>
-                {{ trans('footer.loading') }}
-            </h4>
-
-            <h4 id="errorDonation" style="display: none">
-                <i class="fa fa-exclamation-triangle"></i>
-                {{ trans('footer.error') }}
-            </h4>
-
-            <div id="donation" style="display: none">
-                <h4>{{ trans('footer.latest') }}</h4>
-                <p>{{ trans('footer.from') }}: <strong id="name"></strong><br>
-                    {{ trans('footer.amount') }}: £<strong id="amount"></strong><br>
-                    {{ trans('footer.message') }}: <strong id="message"></strong></p>
-            </div>
-
-            <h4 id="allDonations" style="display: none">{{ trans('footer.total') }}: £
-                <span id="totalDonations"></span>
-            </h4>
+            @if (Helper::settings('donate'))
+                <h4 id="loadingDonation">
+                    <i class="fa fa-refresh fa-spin"></i>
+                    {{ trans('footer.loading') }}
+                </h4>
+    
+                <h4 id="errorDonation" style="display: none">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    {{ trans('footer.error') }}
+                </h4>
+    
+                <div id="donation" style="display: none">
+                    <h4>{{ trans('footer.latest') }}</h4>
+                    <p>{{ trans('footer.from') }}: <strong id="name"></strong><br>
+                        {{ trans('footer.amount') }}: £<strong id="amount"></strong><br>
+                        {{ trans('footer.message') }}: <strong id="message"></strong></p>
+                </div>
+    
+                <h4 id="allDonations" style="display: none">{{ trans('footer.total') }}: £
+                    <span id="totalDonations"></span>
+                </h4>
+            @else 
+                <h4>Donations Not Enabled</h4>
+            @endif
         </div>
 
         <div class="col-lg-3">

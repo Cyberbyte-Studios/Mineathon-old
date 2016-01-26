@@ -49,14 +49,18 @@
                     <div class="panel-footer">
                         <div class="row">
                             <div class="col-xs-8">
-                                @if($voted)
-                                    <button type="button" class="btn btn-primary btn-lg vote disabled"
-                                            data-charity="{{ $charity->id }}"
-                                            data-votes="{{ $charity->votes }}">{{ trans('vote.wait') }}</button>
+                                @if (Helper::settings('votes'))
+                                    @if($voted)
+                                        <button type="button" class="btn btn-primary btn-lg vote disabled"
+                                                data-charity="{{ $charity->id }}"
+                                                data-votes="{{ $charity->votes }}">{{ trans('vote.wait') }}</button>
+                                    @else
+                                        <button type="button" class="btn btn-primary btn-lg vote"
+                                                data-charity="{{ $charity->id }}"
+                                                data-votes="{{ $charity->votes }}">{{ trans('vote.vote') }}</button>
+                                    @endif
                                 @else
-                                    <button type="button" class="btn btn-primary btn-lg vote"
-                                            data-charity="{{ $charity->id }}"
-                                            data-votes="{{ $charity->votes }}">{{ trans('vote.vote') }}</button>
+                                    <h3>{{ trans('vote.votingDiabled') }}</h3>
                                 @endif
                             </div>
                             <div class="col-xs-4">
@@ -72,25 +76,28 @@
     </div>
 @endsection
 
-@push('scripts')
-<script>
-    $(document).ready(function () {
-        $('.vote').click(function () {
-            var self = $(this);
-            var charity = self.data('charity');
-            var score = self.data('votes');
-            var parent = self.parent();
-
-            if (!self.hasClass('disabled')) {
-                parent.find('.col-counter').html(++score).css({'color': 'green'});
-                self.addClass('btn-success');
-                $('.vote').addClass('disabled');
-                self.removeClass('btn-primary');
-
-                $.post("/vote", {'charity': charity, '_token': '{{ csrf_token() }}'}, function (data) {
-                });
-            }
+@if (Helper::settings('votes'))
+    @push('scripts')
+    <script>
+        $(document).ready(function () {
+            $('.vote').click(function () {
+                var self = $(this);
+                var charity = self.data('charity');
+                var score = self.data('votes');
+                var parent = self.parent().parent();
+                var cont = parent.find(".col-xs-4");
+    
+                if (!self.hasClass('disabled')) {
+                    cont.find('.col-counter').html(++score).css({'color': 'green'});
+                    self.removeClass('btn-primary');
+                    self.addClass('btn-success');
+                    $('.vote').addClass('disabled');
+    
+                    $.post("/vote", {'charity': charity, '_token': '{{ csrf_token() }}'}, function (data) {
+                    });
+                }
+            });
         });
-    });
-</script>
-@endpush
+    </script>
+    @endpush
+@endif

@@ -55,4 +55,35 @@ $(function() {
             icon: 'favicon.ico'
         });
     });
+    
+    function setCookie(name, value, expiry) {
+        var d = new Date();
+        d.setTime(d.getTime() + (expiry*24*60*60*1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = name + "=" + value + "; " + expires;
+    }
+    
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        }
+        return "";
+    }
+    
+    if (getCookie('cookieWarning')) {
+        console.log('Cookies Already Accepted');
+    } else {
+        $('#cookie').show();
+    }
+    
+    $('#cookie').on('closed.bs.alert', function () {
+        console.log('Cookies Accepted');
+        setCookie("cookieWarning", 1, 30);
+    });
+    
+    $('[data-toggle="tooltip"]').tooltip(); 
 });

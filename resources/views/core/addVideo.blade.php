@@ -2,20 +2,20 @@
 
 @section('content')
 <div class="container sponsorFix">
-    <div class="row welcomeFix margin">
+    <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
-                <div class="panel-heading centered">{{ trans('content.videoNew.title') }}</div>
+                <div class="panel-heading centered">{{ trans('video.title') }}</div>
                 <div class="panel-body">
-                    <h3 class="centered">{{ trans('content.videoNew.rulesTitle') }}:</h3>
-                    {!! trans('content.videoNew.rules') !!}
-                    <p class="centered"><b>{!! trans('content.videoNew.rulesDisclamer') !!}</b></p>
+                    <h3 class="centered">{{ trans('video.rulesTitle') }}:</h3>
+                    {!! trans('video.rules') !!}
+                    <p class="centered"><b>{!! trans('video.rulesDisclamer') !!}</b></p>
                     <br>
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/video/save') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">{{ trans('content.videoNew.ytIDText') }}</label>
+                            <label class="col-md-4 control-label">{{ trans('video.ytIDText') }}</label>
 
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="youtube" value="{{ old('youtube') }}">
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">{{ trans('content.videoNew.charity') }}</label>
+                            <label class="col-md-4 control-label">{{ trans('video.charity') }}</label>
 
                             <div class="col-md-6">
                                 <select class="form-control" id="charity" name="charity">
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">{{ trans('content.videoNew.contactEMAD') }}</label>
+                            <label class="col-md-4 control-label">{{ trans('video.contactEMAD') }}</label>
 
                             <div class="col-md-6">
                                 <input type="email" class="form-control" name="email" value="{{ old('email') }}">
@@ -56,7 +56,7 @@
                                     </span>
                                 @else
                                     <span class="help-block centered">
-                                        <strong>{{ trans('content.videoNew.contactInfo') }}</strong>
+                                        <strong>{{ trans('video.contactInfo') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -77,7 +77,7 @@
                         <div class="form-group centered">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-check"></i> {{ trans('content.submit') }}
+                                    <i class="fa fa-btn fa-check"></i> {{ trans('general.submit') }}
                                 </button>
                             </div>
                         </div>

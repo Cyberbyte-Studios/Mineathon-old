@@ -9,7 +9,10 @@ return array (
   'wait' => 'You can only vote once a day',
   'suggest' => 
   array (
-    'charity' => 'Suggest Charity',
-    'video' => 'Submit Video',
+    'charity' => 'Suggest A Cause',
+    'video' => 'Submit A Video',
   ),
+  'disableVote' => 'Disable Voting',
+  'enableVote' => 'Enable Voting',
+  'votingDiabled' => 'Voting Is Disabled',
 );

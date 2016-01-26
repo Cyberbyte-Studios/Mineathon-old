@@ -3,6 +3,7 @@
 return array (
   'submit' => 'Submit',
   'login' => 'Login',
+  'users' => 'Users',
   'guests' => 'Guests',
   'sponsors' => 'Sponsors',
   'loginFirst' => 'You must login first',

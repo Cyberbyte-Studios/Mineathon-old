@@ -161,6 +161,8 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\TranslationManager\ManagerServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
     ],
 
     /*
@@ -209,6 +211,7 @@ return [
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Helper'    => App\Facades\Helper::class,
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
     ],
 
 ];

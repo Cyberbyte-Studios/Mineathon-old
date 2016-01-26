@@ -9,4 +9,5 @@ return array (
   'charity' => 'Charity',
   'emailAddress' => 'Contact E-Mail Address',
   'contactInfo' => 'Used incase of any issues',
+  'rulesDisclamer' => 'Please note one you have submitted a cause it will not appear on the site straight away as we have to approve all submissions to ensure they meet the requirements!',
 );

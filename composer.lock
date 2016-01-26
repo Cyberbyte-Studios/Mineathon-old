@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d5033ee31b92dc3b77948a4a9d4c1368",
-    "content-hash": "0b2a2b39612fe386305dc271518062cd",
+    "hash": "e5ea61a307afe563051fa3a126e1ec14",
+    "content-hash": "2edb6e273658edac9b3c9d43bad6a3ee",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -328,6 +328,71 @@
             "time": "2015-11-06 14:35:42"
         },
         {
+            "name": "graham-campbell/htmlmin",
+            "version": "v4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-HTMLMin.git",
+                "reference": "293a16bd9e7cd5df19283d3a748426261e704a89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-HTMLMin/zipball/293a16bd9e7cd5df19283d3a748426261e704a89",
+                "reference": "293a16bd9e7cd5df19283d3a748426261e704a89",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.1.*|5.2.*",
+                "illuminate/filesystem": "5.1.*|5.2.*",
+                "illuminate/http": "5.1.*|5.2.*",
+                "illuminate/routing": "5.1.*|5.2.*",
+                "illuminate/support": "5.1.*|5.2.*",
+                "illuminate/view": "5.1.*|5.2.*",
+                "mrclay/minify": "^2.2",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.1",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\HTMLMin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "HTMLMin Is A Simple HTML Minifier For Laravel 5",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel HTMLMin",
+                "Laravel-HTMLMin",
+                "framework",
+                "html",
+                "html minifier",
+                "htmlmin",
+                "laravel",
+                "minifier"
+            ],
+            "time": "2015-11-14 11:55:24"
+        },
+        {
             "name": "greggilbert/recaptcha",
             "version": "2.1.0",
             "source": {
@@ -378,6 +443,126 @@
                 "recaptcha"
             ],
             "time": "2016-01-03 05:15:06"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5d04bdd2881ac89abde1fb78cc234bce24327bb",
+                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "PSR-7 message implementation",
+            "keywords": [
+                "http",
+                "message",
+                "stream",
+                "uri"
+            ],
+            "time": "2016-01-23 01:23:02"
+        },
+        {
+            "name": "intervention/image",
+            "version": "2.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "9f29360b8ab94585cb9e80cf9045abd5b85feb89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/9f29360b8ab94585cb9e80cf9045abd5b85feb89",
+                "reference": "9f29360b8ab94585cb9e80cf9045abd5b85feb89",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "3.*"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.net",
+                    "homepage": "http://olivervogel.net/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2016-01-02 19:15:13"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -875,6 +1060,51 @@
             "time": "2015-10-14 12:51:02"
         },
         {
+            "name": "mrclay/minify",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrclay/minify.git",
+                "reference": "3c11ba8232a2155a1a29552aafc528be5fb0a662"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mrclay/minify/zipball/3c11ba8232a2155a1a29552aafc528be5fb0a662",
+                "reference": "3c11ba8232a2155a1a29552aafc528be5fb0a662",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "tubalmartin/cssmin": "~2.4.8"
+            },
+            "suggest": {
+                "tubalmartin/cssmin": "Support minify with CSSMin (YUI PHP port)"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "min/lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Clay",
+                    "email": "steve@mrclay.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Minify is a PHP5 app that helps you follow several rules for client-side performance. It combines multiple CSS or Javascript files, removes unnecessary whitespace and comments, and serves them with gzip encoding and optimal client-side cache headers",
+            "homepage": "http://code.google.com/p/minify/",
+            "time": "2014-10-30 22:58:02"
+        },
+        {
             "name": "mtdowling/cron-expression",
             "version": "v1.0.4",
             "source": {
@@ -1162,6 +1392,55 @@
                 "redis"
             ],
             "time": "2015-07-30 18:34:15"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
+                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2015-05-04 20:22:00"
         },
         {
             "name": "psr/log",
