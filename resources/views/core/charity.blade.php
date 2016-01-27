@@ -12,11 +12,11 @@
                     </div>
                     <div class="panel-footer centered">
                         <h3>{{ trans('general.status.status') }}:
-                            @if($charity->published === 0)
+                            @if($charity->published == '0')
                                 <span class="label label-warning">{{ trans('general.status.review') }}</span>
-                            @elseif($charity->published === 1)
+                            @elseif($charity->published == '1')
                                 <span class="label label-danger">{{ trans('general.status.rejected') }}</span>
-                            @elseif($charity->published === 2)
+                            @elseif($charity->published == '2')
                                 <span class="label label-success">{{ trans('general.status.approved') }}</span>
                             @else
                                 <span class="label label-danger">{{ trans('general.status.error') }}</span>
