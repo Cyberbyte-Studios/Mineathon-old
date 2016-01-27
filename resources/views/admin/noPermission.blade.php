@@ -1,3 +1,5 @@
+@extends('templates.template')
+
 @section('content')
     <div class="container">
         <div class="row">
