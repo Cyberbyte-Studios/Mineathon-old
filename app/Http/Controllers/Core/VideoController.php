@@ -22,7 +22,8 @@ class VideoController extends Controller {
         $id = DB::table('videos')->insertGetId([
             'charity_id' => $request->charity, 
             'youtube' => $request->youtube,
-            'user' => $request->email
+            'user' => $request->email,
+            'published' => '0',            
         ]);
         
         $video = Cache::rememberForever('video_'.$id, function() use ($id) {

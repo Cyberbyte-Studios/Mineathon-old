@@ -11,7 +11,7 @@
                     {!! trans('charity.new.rules') !!}
                     <p class="centered"><b>{!! trans('charity.new.rulesDisclaimer') !!}</b></p>
                     <br>
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/charity/save') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ secure_url('/charity/save') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group">

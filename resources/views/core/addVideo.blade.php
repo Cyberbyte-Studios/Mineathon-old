@@ -11,7 +11,7 @@
                     {!! trans('video.rules') !!}
                     <p class="centered"><b>{!! trans('video.rulesDisclamer') !!}</b></p>
                     <br>
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/video/save') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ secure_url('/video/save') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group">

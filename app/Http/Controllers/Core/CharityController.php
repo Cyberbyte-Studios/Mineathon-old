@@ -23,7 +23,8 @@ class CharityController extends Controller {
         $id = DB::table('charities')->insertGetId([
             'name' => $request->charity, 
             'description' => $request->description,
-            'url' => $request->url
+            'url' => $request->url,
+            'published' => '0',
         ]);
 
         $charity = Cache::rememberForever('charity_'.$id, function() use($id){
