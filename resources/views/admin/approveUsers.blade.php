@@ -49,7 +49,7 @@
             $('.btn-success').click(function () {
                 var self = $(this);
                 var id = self.data('id');
-                $.post("/user/approve", {'id': id, '_token': '{{ csrf_token() }}'}, function (data) {
+                $.post("{{ secure_url('/user/approve') }}", {'id': id, '_token': '{{ csrf_token() }}'}, function (data) {
                 });
                 location.reload();
             });
@@ -58,7 +58,7 @@
             $('.btn-danger').click(function () {
                 var self = $(this);
                 var id = self.data('id');
-                $.post("/user/remove", {'id': id, '_token': '{{ csrf_token() }}'}, function (data) {
+                $.post("{{ secure_url('/user/remove') }}", {'id': id, '_token': '{{ csrf_token() }}'}, function (data) {
                 });
                 location.reload();                
             });

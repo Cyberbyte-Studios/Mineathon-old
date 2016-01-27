@@ -7,7 +7,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ secure_url('/login') }}">
                         {!! csrf_field() !!}
                         @if (session('message'))
                             <div class="alert alert-warning">{{ session('message') }}</div>
@@ -57,7 +57,7 @@
                                     <i class="fa fa-btn fa-sign-in"></i> Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                                <a class="btn btn-link" href="{{ secure_url('/password/reset') }}">Forgot Your Password?</a>
                             </div>
                         </div>
                     </form>

@@ -8,7 +8,7 @@
     <link rel="icon" href="{{ secure_asset('favicon.ico') }}" type="image/icon">
 
     <title>Mineathon</title>
-    <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
+    <link rel="stylesheet" href="{{ secure_url(elixir('css/app.css')) }}">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

@@ -6,7 +6,7 @@
         <div class="panel panel-default adminTable" id="pendingVideo">
             <div class="panel-heading">
                 <h4><i class="fa fa-users fa-fw"></i> Pending Charities </h4>
-                <a href="{{ url('dashboard') }}" class="btn btn-primary"><i class="fa fa-reply-all fa-fw"></i> Dashboard</a>
+                <a href="{{ secure_url('dashboard') }}" class="btn btn-primary"><i class="fa fa-reply-all fa-fw"></i> Dashboard</a>
             </div>
             <div class="panel-body">
                 <div class="noWrap">
@@ -27,7 +27,7 @@
                                     <tr class="centered">
                                         <td id="id">{{ $charity->id }}</td>
                                         <td>{{ $charity->name}}</td>
-                                        <td><a href="{{ url('charity/'.$charity->id) }}" target="_blank">View More</a> </td>                                   
+                                        <td><a href="{{ secure_url('charity/'.$charity->id) }}" target="_blank">View More</a> </td>                                   
                                         <td>
                                             <div class="row">
                                                 <button type="button" class="btn btn-success"><i class="fa fa-check fa-fw"></i></button>
@@ -54,7 +54,7 @@
         vidID = vidID[0].innerText;
         if (confirm('Are you sure you want to approve this video?')) {
             $(this).closest("tr").remove();
-            $.post("{{ url('charity/approve') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});             
+            $.post("{{ secure_url('charity/approve') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});             
         }
     });
     
@@ -64,7 +64,7 @@
         vidID = vidID[0].innerText;
         if (confirm('Are you sure you want to approve this video?')) {  
             $(this).closest("tr").remove();
-            $.post("{{ url('charity/deny') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});
+            $.post("{{ secure_url('charity/deny') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});
         }
     });    
 </script>

@@ -6,7 +6,7 @@
         <div class="panel panel-default adminTable" id="pendingVideo">
             <div class="panel-heading">
                 <h4><i class="fa fa-users fa-fw"></i> Pending Videos </h4>
-                <a href="{{ url('dashboard') }}" class="btn btn-primary"><i class="fa fa-reply-all fa-fw"></i> Dashboard</a>
+                <a href="{{ secure_url('dashboard') }}" class="btn btn-primary"><i class="fa fa-reply-all fa-fw"></i> Dashboard</a>
             </div>
             <div class="panel-body">
                 <div class="noWrap">
@@ -56,7 +56,7 @@
         vidID = vidID[0].innerText;
         if (confirm('Are you sure you want to approve this video?')) {
             $(this).closest("tr").remove();
-            $.post("{{ url('video/approve') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});             
+            $.post("{{ secure_url('video/approve') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});             
         }
     });
     
@@ -66,7 +66,7 @@
         vidID = vidID[0].innerText;
         if (confirm('Are you sure you want to approve this video?')) {
             $(this).closest("tr").remove();
-            $.post("{{ url('video/deny') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});
+            $.post("{{ secure_url('video/deny') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});
         }
     });    
 </script>

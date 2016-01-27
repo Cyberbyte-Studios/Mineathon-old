@@ -66,7 +66,7 @@
         var sponsorID = row.data("sponsorid");
         if (confirm('Are you sure you want to remove this sponsor?')) {  
             row.remove();
-            $.post("{{ url('/sponsor/remove') }}", { id: sponsorID, '_token': '{!! csrf_token() !!}' }, function(data){});
+            $.post("{{ secure_url('/sponsor/remove') }}", { id: sponsorID, '_token': '{!! csrf_token() !!}' }, function(data){});
         }
     });    
 </script>

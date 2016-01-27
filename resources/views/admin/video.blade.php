@@ -6,7 +6,12 @@
         <div class="panel panel-primary" id="admin">
             <div class="panel-heading">
                 <h4 class="fixVid myBlock">{{ trans('general.admin.title') }}</h4>
-                <h4 class="fixVid myBlock" style="float:right; margin-right:10px;">{{ trans('general.admin.loggedInA') }}: {{ Auth::user()->name }}<a style="color:white; margin-left:25px;" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></h4>                
+                <h4 class="fixVid myBlock" style="float:right; margin-right:10px;">
+                    {{ trans('general.admin.loggedInA') }}: {{ Auth::user()->name }}
+                    <a style="color:white; margin-left:25px;" href="{{ secure_url('/logout') }}">
+                        <i class="fa fa-btn fa-sign-out"></i> {{ trans('dashboard.logout') }}
+                    </a>
+                </h4>                
             </div>
             <div class="panel-body">
                 <div class="panel panel-default adminTable" id="guests">

@@ -67,7 +67,7 @@
         var guestID = row.data("guestid");
         if (confirm('Are you sure you want to remove this guest?')) {  
             row.remove();
-            $.post("{{ url('/guest/remove') }}", { id: guestID, '_token': '{!! csrf_token() !!}' }, function(data){});
+            $.post("{{ secure_url('/guest/remove') }}", { id: guestID, '_token': '{!! csrf_token() !!}' }, function(data){});
         }
     });
 </script>

@@ -15,11 +15,11 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-sm-6">
-                        <a href="{{ url('charity/new') }}"
+                        <a href="{{ secure_url('charity/new') }}"
                            class="btn btn-primary btn-lg">{{ trans('vote.suggest.charity') }}</a>
                     </div>
                     <div class="col-sm-6">
-                        <a href="{{ url('video/new') }}"
+                        <a href="{{ secure_url('video/new') }}"
                            class="btn btn-primary btn-lg">{{ trans('vote.suggest.video') }}!</a>
                     </div>
                 </div>

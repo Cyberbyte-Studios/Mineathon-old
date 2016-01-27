@@ -6,7 +6,7 @@
         @include('templates.nav')
     
         <div id="cookie" class="alert alert-info" style="display: none">            
-                <button type="button" class="close" data-dismiss="alert">×</button>
+                <button type="button" class="close" data-dismiss="alert" style="margin-left: 10px;">×</button>
                 <strong> This Site Uses Cookies</strong>
         </div>
     
@@ -14,8 +14,8 @@
     
         {{-- Footer Section --}}
         @include('templates.footer')
-    
-        <script src="{{ elixir('js/app.js') }}"></script>
+
+        <script src="{{ secure_url(elixir('js/app.js')) }}"></script>
         @stack('scripts')
         
         @if (app()->environment() == 'production')
