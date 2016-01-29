@@ -26,8 +26,8 @@ class Helper {
 		        echo ' Page Time: '. microtime(true) - LARAVEL_START;
 		        echo ' Load: ' . $load[0].' '.$load[1].' '.$load[2];
 		        echo ' Server: <a href="#" data-toggle="tooltip" title="'.$_SERVER['SERVER_ADDR'].'">'.$this->serverName($_SERVER['SERVER_ADDR']).'</a>';
-		        if (app()->environment() == 'production') {
-		            echo 'DEV MODE';
+		        if (app()->environment() != 'production') {
+		            echo ' - DEV MODE';
 		        }
     		}
 		}
