@@ -17,7 +17,6 @@ class CharityController extends Controller {
             'charity' => 'required|string',
             'description' => 'required|string',
             'url' => 'required|string',            
-            'g-recaptcha-response' => 'required|recaptcha',
         ]);
         
         $id = DB::table('charities')->insertGetId([

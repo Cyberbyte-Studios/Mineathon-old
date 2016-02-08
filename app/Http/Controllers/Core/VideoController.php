@@ -16,7 +16,6 @@ class VideoController extends Controller {
             'email' => 'required|email|max:64',
             'charity' => 'required|integer|exists:charities,id',
             'youtube' => 'required|alpha_dash|max:32',
-            'g-recaptcha-response' => 'required|recaptcha',
         ]);
         
         $id = DB::table('videos')->insertGetId([
