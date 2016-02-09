@@ -10,14 +10,14 @@ class UserSeeder extends Seeder
             'name'     =>  'Cammygames',
             'email'    =>  'cammygamesyt@gmail.com',
             'password' =>  '$2y$10$3imw3S5lCWi0WCWL3aftyOnp9LGNNm6XTQZ5I9dWpRPAS2yv1iETu',
-            'level'    =>  3,
+            'level'    =>  4,
         ));
         
         App\User::create(array(
             'name'     =>  'SCollins',
             'email'    =>  'theatrepro11@gmail.com',
             'password' =>  '$2y$10$uJu4Faoulrwc8RogJGcUPO/HaepUWO5q06lmm.2qasST9Lz/IBpve',
-            'level'    =>  3,
+            'level'    =>  4,
         ));
         
         App\User::create(array(

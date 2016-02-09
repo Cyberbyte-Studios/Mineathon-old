@@ -16,17 +16,18 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <a href="{{ secure_url('charity/new') }}"
-                           class="btn btn-primary btn-lg">{{ trans('vote.suggest.charity') }}</a>
+                           class="btn btn-primary btn-lg small-padd">{{ trans('vote.suggest.charity') }}</a>
                     </div>
                     <div class="col-sm-6">
                         <a href="{{ secure_url('video/new') }}"
-                           class="btn btn-primary btn-lg">{{ trans('vote.suggest.video') }}!</a>
+                           class="btn btn-primary btn-lg small-padd">{{ trans('vote.suggest.video') }}!</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="col-md-12">
             @foreach($charities as $charity)
+            <div class="row">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{ $charity->name }}</h3>
@@ -69,6 +70,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
         {{-- Sponsor  Section --}}
@@ -80,6 +82,10 @@
     @push('scripts')
     <script>
         $(document).ready(function () {
+            if (localStorage.getItem('alreadyVoted') + 43200 > (new Date).getTime()) {
+                $('.vote').addClass('disabled');
+            }
+            
             $('.vote').click(function () {
                 var self = $(this);
                 var charity = self.data('charity');
@@ -88,12 +94,15 @@
                 var cont = parent.find(".col-xs-4");
     
                 if (!self.hasClass('disabled')) {
-                    cont.find('.col-counter').html(++score).css({'color': 'green'});
-                    self.removeClass('btn-primary');
-                    self.addClass('btn-success');
-                    $('.vote').addClass('disabled');
-    
                     $.post("/vote", {'charity': charity, '_token': '{{ csrf_token() }}'}, function (data) {
+                        localStorage.setItem('alreadyVoted', (new Date).getTime());
+                        cont.find('.col-counter').html(++score).css({'color': 'green'});
+                        self.removeClass('btn-primary');
+                        self.addClass('btn-success');
+                        $('.vote').addClass('disabled');
+                        if (data.success == true) {
+                            console.warn('Vote failed...');
+                        }
                     });
                 }
             });

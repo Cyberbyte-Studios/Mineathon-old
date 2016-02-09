@@ -49,8 +49,11 @@ class CharityController extends Controller {
     }
     
     public function pending() {
-        $charities = Charity::where('published', '0')->get();
-
+        if (Auth::user()->level >= 4) {
+            $charities = Charity::withTrashed()->where('published', '0')->get();
+        } else {
+            $charities = Charity::where('published', '0')->get();
+        }
         return view('admin.pendingCharities', ['charities' => $charities]);        
     }
     

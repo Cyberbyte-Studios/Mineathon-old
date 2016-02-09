@@ -30,8 +30,12 @@
                                         <td><a href="{{ secure_url('charity/'.$charity->id) }}" target="_blank">View More</a> </td>                                   
                                         <td>
                                             <div class="row">
+                                                @if($charity->trashed())
+                                                <i class="fa fa-trash-o"></i>
+                                                @else
                                                 <button type="button" class="btn btn-success"><i class="fa fa-check fa-fw"></i></button>
                                                 <button type="button" class="btn btn-danger"><i class="fa fa-close fa-fw"></i></button>
+                                                @endif
                                             </div>
                                         </td>
                                     </tr>
@@ -52,7 +56,7 @@
         rows = $(this).closest("tr").find("td");
         vidID = $('#id').val(rows[0].innerText);
         vidID = vidID[0].innerText;
-        if (confirm('Are you sure you want to approve this video?')) {
+        if (confirm('Are you sure you want to approve this charity?')) {
             $(this).closest("tr").remove();
             $.post("{{ secure_url('charity/approve') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});             
         }
@@ -62,7 +66,7 @@
         rows = $(this).closest("tr").find("td");
         vidID = $('#id').val(rows[0].innerText);
         vidID = vidID[0].innerText;
-        if (confirm('Are you sure you want to approve this video?')) {  
+        if (confirm('Are you sure you want to deny this chaity?')) {  
             $(this).closest("tr").remove();
             $.post("{{ secure_url('charity/deny') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});
         }

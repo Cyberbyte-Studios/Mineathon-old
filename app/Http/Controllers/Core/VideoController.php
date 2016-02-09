@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Core;
 use DB;
 use Auth;
 use Cache;
+use Session;
 use App\Video;
 use App\Charity;
 use Illuminate\Http\Request;
@@ -43,8 +44,12 @@ class VideoController extends Controller {
     }
 
     public function pending() {
-        $videos = Video::where('published', '0')->with('charity')->get();
-
+        if (Auth::user()->level >= 4) {
+            $videos = Video::withTrashed()->where('published', '0')->with('charity')->get();
+        } else {
+            $videos = Video::where('published', '0')->with('charity')->get();
+        }
+        
         return view('admin.pendingVideo', ['videos' => $videos]);        
     }
     

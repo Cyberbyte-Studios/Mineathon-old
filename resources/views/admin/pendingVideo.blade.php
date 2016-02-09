@@ -64,7 +64,7 @@
         rows = $(this).closest("tr").find("td");
         vidID = $('#id').val(rows[0].innerText);
         vidID = vidID[0].innerText;
-        if (confirm('Are you sure you want to approve this video?')) {
+        if (confirm('Are you sure you want to deny this video?')) {
             $(this).closest("tr").remove();
             $.post("{{ secure_url('video/deny') }}", { id: vidID, '_token': '{!! csrf_token() !!}' }, function(data){});
         }
