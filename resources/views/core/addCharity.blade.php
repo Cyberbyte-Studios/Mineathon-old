@@ -31,7 +31,7 @@
                             <label class="col-md-4 control-label">{{ trans('charity.new.desc') }}</label>
 
                             <div class="col-md-6">
-                                <input class="form-control" type="textarea" value="{{ old('description') }}" name="description"/>
+                                <textarea class="form-control" name="description">{{ old('description') }}</textarea>
                                 @if ($errors->has('description'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('description') }}</strong>

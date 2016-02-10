@@ -84,6 +84,7 @@
         $(document).ready(function () {
             if (localStorage.getItem('alreadyVoted') + 43200 > (new Date).getTime()) {
                 $('.vote').addClass('disabled');
+                $('.vote').text('{{ trans('vote.wait') }}');
             }
             
             $('.vote').click(function () {

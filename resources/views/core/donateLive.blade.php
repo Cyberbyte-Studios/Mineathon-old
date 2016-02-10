@@ -8,10 +8,10 @@
 			    <h1>Donate to {{ $charity->name }}!</h1>
 				<h3>We have raised <strong id="raised"></strong> so far! Help us reach our goal of £10,000</h3>
                 <div class="raisedStats"></div>
-			</div><!-- /col-lg-8 -->
-		</div><!-- /row -->
-    </div> <!-- /container -->
-</div><!-- /ww -->
+			</div>
+		</div>
+    </div>
+</div>
 
 <div class="container">
     <h1 class="text-center">Top 10 Donations</h1>
@@ -30,41 +30,38 @@
             </table>
         </div>
     </div>
-</div><!-- /container -->
+</div>
 
-{{-- Sponsor  Section --}}
 @include('templates.sponsors')
 @endsection
 
 @push('scripts')
-<!-- Top 10 Donators -->
 <script>
     $(document).ready(function () {
+        fetchTop();
+        fetchRaised();
+        
         setInterval(function () {
             fetchTop();
-        }, 600000);  // this will call your fetchData function for every 10 Min.
+        }, 600000);
+        
+        setInterval(function () {
+            fetchRaised();
+        }, 300000);
     });
 
     function fetchTop() {
-        $(".myTab tbody").empty(); // this will remove all <tr>.
+        $(".myTab tbody").empty();
         $.get("https://imraising.tv/api/v1/topDonors?apikey=bfncDsxXbt8WB0wiRvwXVw", function (data) {
             $.each(data, function (i, donor) {
                 $(".myTab").append(
-                        "<tr><td class='centered'>" + donor.nickname + "</td>" +
-                        "<td class='centered'>£" + donor.amount.total + "</td></tr>"
+                    "<tr><td class='centered'>" + donor.nickname + "</td>" +
+                    "<td class='centered'>£" + donor.amount.total + "</td></tr>"
                 );
             });
         });
     }
-</script>
-
-<!-- Total Raised -->
-<script>
-    $(document).ready(function () {
-        setInterval(function () {
-            fetchRaised();
-        }, 300000);  // this will call your fetchRaised function for every 5 Min.
-    });
+    
     function fetchRaised() {
         $.get("https://imraising.tv/api/v1/donations/total?apikey=bfncDsxXbt8WB0wiRvwXVw", function (data) {
             $('#raised').html('£' + data[0].total);
@@ -72,12 +69,5 @@
             $('.raisedStats').html('<div class="progress"><div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="' + raised + '" aria-valuemin="0" aria-valuemax="100" style="width: ' + raised + '%;">£' + data[0].total + '</div></div>');
         });
     }
-</script>
-
-<script>
-    $(document).ready(function () {
-        fetchTop();
-        fetchRaised();
-    });
 </script>
 @endpush
