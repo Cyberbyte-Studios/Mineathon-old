@@ -8,7 +8,7 @@
                     <div class="panel-heading centered"><h3 class="fixVid">{{ $charity->name }}</h3>
                     </div>
                     <div class="panel-body centered">
-                        <a class="btn btn-lg btn-primary" href="{{ $charity->url }}">Website</a>
+                        <a class="btn btn-lg btn-primary" href="{{ Helper::urlSafe($charity->url) }}">Website</a>
                     </div>
                     <div class="panel-footer centered">
                         <h3>{{ trans('general.status.status') }}:

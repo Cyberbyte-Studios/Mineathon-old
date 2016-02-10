@@ -33,6 +33,13 @@ class Helper {
 		}
     }
     
+    public function urlSafe($url) {
+        $url = str_replace ('http://', '', $url);
+        $url = str_replace ('https://', '', $url);
+        $url = str_replace ('//', '', $url);
+        return'http://'.$url;
+    }
+    
     public function serverName($ip) {
         switch ($ip) {
             case '10.131.119.172':
