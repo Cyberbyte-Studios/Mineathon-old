@@ -1,7 +1,7 @@
 @extends('templates.template')
 
 @section('content')
-<div class="container sponsorFix">
+<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
@@ -33,7 +33,11 @@
                             <div class="col-md-6">
                                 <select class="form-control" id="charity" name="charity">
                             		@foreach($charities as $charity)
-                            		    <option value="{{ $charity->id }}">{{ $charity->name }}</option>
+                            		    <option value="{{ $charity->id }}">{{ $charity->name }}
+                            		    @if($charity->published == 0)
+                                        - {{ trans('video.pending') }}	    
+                            		    @endif
+                            		    </option>
                             		@endforeach
                                 </select>
                                 @if ($errors->has('charity'))

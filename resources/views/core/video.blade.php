@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container sponsorFix">
-        <div class="row welcomeFix margin">
+        <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-primary">
                     <div class="panel-heading centered"><h3 class="fixVid">{{ $video->charity->name }}</h3>

@@ -70,10 +70,8 @@ class VideoController extends Controller {
     }
     
     public function addVideo() {
-        $charities = Cache::rememberForever('charities', function() {
-            return Charity::where('published', 2)->with(['videos' => function($query) {
-                $query->where('published', 2);
-            }])->get();
+        $charities = Cache::rememberForever('charities_pending', function() {
+            return Charity::where('published', 2)->orWhere('published', 0)->get();
         });
         
         return view('core.addVideo', ['charities' => $charities]);

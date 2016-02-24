@@ -82,7 +82,7 @@
     @push('scripts')
     <script>
         $(document).ready(function () {
-            if (localStorage.getItem('alreadyVoted') + 43200 > (new Date).getTime()) {
+            if (parseInt(localStorage.getItem('alreadyVoted')) + 43200 > (new Date).getTime()) {
                 $('.vote').addClass('disabled');
                 $('.vote').text('{{ trans('vote.wait') }}');
             }
@@ -102,7 +102,9 @@
                         self.addClass('btn-success');
                         $('.vote').addClass('disabled');
                         if (data.success == true) {
-                            console.warn('Vote failed...');
+                            console.log('Voted');
+                        } else {
+                            console.warn('Vote Failed');
                         }
                     });
                 }

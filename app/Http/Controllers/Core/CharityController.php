@@ -31,6 +31,7 @@ class CharityController extends Controller {
         });
         
         Cache::flush('charities');
+        Cache::flush('charities_pending');
         
         return view('core.charity', ['charity' => $charity]);
     }
@@ -58,19 +59,23 @@ class CharityController extends Controller {
     }
     
     public function approve(Request $request) {
-        Cache::flush('charities');
         $this->validate($request, ['id' => 'required|integer']);
         $charity = Charity::findOrFail($request->id);
         $charity->published = 2;
         $charity->save();
+        
+        Cache::flush('charities');
+        Cache::flush('charities_pending');
     }
     
     public function deny(Request $request) {
-        Cache::flush('charities');        
         $this->validate($request, ['id' => 'required|integer']);
         $charity = Charity::findOrFail($request->id);
         $charity->published = 1;
-        $charity->save();               
+        $charity->save();
+        
+        Cache::flush('charities');
+        Cache::flush('charities_pending');
     }    
 
 }

@@ -14,7 +14,7 @@ class VoteController extends Controller {
         $charities = Cache::rememberForever('charities', function() {
             return Charity::where('published', 2)->with(['videos' => function($query) {
                 $query->where('published', 2);
-            }])->get();
+            }])->orderBy('votes', 'desc')->get();
         });
         
         $voted = false;
@@ -51,6 +51,7 @@ class VoteController extends Controller {
         $video->save();
         
         Cache::flush('charities');
+        Cache::flush('charities_pending');
         
         return $response;
     }
