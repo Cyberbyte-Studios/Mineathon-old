@@ -8,6 +8,7 @@
                     <h4 class="myBlock">{{ trans('dashboard.admin.title') }}</h4>
                     <h4 class="myBlock hidden-xs" style="float:right; margin-right:10px;">
                         {{ trans('dashboard.admin.loggedInA') }}: {{ Auth::user()->name }}
+                        ({{ Helper::getUserRank(Auth::user()->level) }})
                         <a style="color:white; margin-left:25px;" href="{{ url('/logout') }}">
                         <i class="fa fa-btn fa-sign-out"></i> {{ trans('dashboard.admin.logout') }}</a>
                     </h4>

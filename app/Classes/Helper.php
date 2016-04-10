@@ -18,10 +18,17 @@ class Helper {
     public function getPendingVideos () {
         return DB::table('videos')->where('published', '0')->count();
     }
+    
+    public function getUserRank($rank) {
+        if ($rank === 4) return 'Super Admin';
+        elseif ($rank === 3) return 'Admin';
+        else return 'User';
+        //todo: add other ranks
+    }
 
     public function debug() {
         if (Auth::check()) {
-		    if (Auth::user()->level >= 3) {
+		    if (Auth::user()->level >= 4) {
 		        $load = sys_getloadavg();
 		        echo ' Version: v1.0.7';
 		        echo ' Load: ' . $load[0].' '.$load[1].' '.$load[2];
@@ -29,8 +36,12 @@ class Helper {
 		        if (app()->environment() != 'production') {
 		            echo ' - DEV MODE';
 		        }
+    		} else {
+    		    echo 'Copyright &copy 2016 Mineathon - You are logged in as '.$this->getUserRank.'. <a href="logout">Logout</a>';
     		}
-		}
+		} else {
+    		echo 'Copyright 2016 &copy Mineathon - Website designed by <a href="http://cyberbyte.org.uk" target="_blank">CyberByte Studios</a>';
+    	}
     }
     
     public function urlSafe($url) {

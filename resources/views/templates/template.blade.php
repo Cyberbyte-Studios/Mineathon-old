@@ -28,6 +28,8 @@
                 ga('create', 'UA-69463242-3', 'auto');
                 ga('send', 'pageview');
             </script>
+        @else
+            <!-- Google Analytics is disabled when not in production -->
         @endif
     </body>
 </html>

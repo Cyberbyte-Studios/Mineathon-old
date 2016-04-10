@@ -61,7 +61,7 @@
                                                 data-votes="{{ $charity->votes }}">{{ trans('vote.vote') }}</button>
                                     @endif
                                 @else
-                                    <h3>{{ trans('vote.votingDiabled') }}</h3>
+                                    <h3 class="votingDisabled">{{ trans('vote.votingDiabled') }}</h3>
                                 @endif
                             </div>
                             <div class="col-xs-4">
